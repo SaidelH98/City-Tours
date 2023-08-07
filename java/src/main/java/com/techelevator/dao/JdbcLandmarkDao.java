@@ -84,7 +84,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
         List<Landmark> landmarkVenues= new ArrayList<>();
 
         String sql = "SELECT landmark_id, name, venue_type, day_of_operation, image, description\n" +
-                "FROM landmarks WHERE venue = ?;";
+                "FROM landmarks WHERE venue_type = ?;";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql, venueType);
 
@@ -98,6 +98,18 @@ public class JdbcLandmarkDao implements LandmarkDao{
         }
 
         return landmarkVenues;
+    }
+
+    @Override
+    public Landmark getLandmarkById(int landmarkId) {
+        String sql = "SELECT  landmark_id, name, venue_type, day_of_operation, image, description\n" +
+                 "FROM landmarks WHERE landmark_id = ?;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, landmarkId);
+        if (result.next()) {
+            return mapRowToLandmark(result);
+        } else {
+            return null;
+        }
     }
 
     private Landmark mapRowToLandmark(SqlRowSet rs) {

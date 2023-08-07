@@ -14,4 +14,6 @@ public interface LandmarkDao {
     List<Landmark> getLandmarkByDay(String dayOfOperation);
 
     List<Landmark> getLandmarkByVenueType(String venueType);
+
+    Landmark getLandmarkById(int landmarkId);
 }
