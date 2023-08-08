@@ -26,8 +26,8 @@ CREATE TABLE schedule (
     id SERIAL,
     landmark_id INT NOT NULL,
     day_of_operation varchar(50) NOT NULL,
-    open_time varchar(50) NOT NULL,
-    close_time varchar(50) NOT NULL,
+    open_time int NOT NULL,
+    close_time int NOT NULL,
     CONSTRAINT fk_landmark FOREIGN KEY(landmark_id) REFERENCES landmarks(landmark_id),
     CONSTRAINT PK_schedule PRIMARY KEY (id)
 );

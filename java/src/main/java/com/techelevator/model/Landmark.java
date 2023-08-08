@@ -4,18 +4,21 @@ public class Landmark {
     private int landmarkId;
     private String name;
     private String venueType;
-    private String dayOfOperation;
+    private String city;
+    private String country;
     private String image;
     private String description;
+    private String address;
 
-    public Landmark(int landmarkId, String name, String venueType, String dayOfOperation, String image, String description) {
+    public Landmark(int landmarkId, String name, String venueType, String city, String country, String image, String description, String address) {
         this.landmarkId = landmarkId;
         this.name = name;
         this.venueType = venueType;
-        this.dayOfOperation = dayOfOperation;
+        this.city = city;
+        this.country = country;
         this.image = image;
         this.description = description;
-
+        this.address = address;
     }
 
     public Landmark() {
@@ -42,16 +45,24 @@ public class Landmark {
         return venueType;
     }
 
-    public void setDayOfOperation(String dayOfOperation) {
-        this.dayOfOperation = dayOfOperation;
-    }
-
-    public String getDayOfOperation() {
-        return dayOfOperation;
-    }
-
     public void setVenueType(String venueType) {
         this.venueType = venueType;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getImage() {
@@ -70,15 +81,25 @@ public class Landmark {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Landmark{" +
                 "landmarkId=" + landmarkId +
                 ", name='" + name + '\'' +
                 ", venueType='" + venueType + '\'' +
-                ", dayOfOperation='" + dayOfOperation + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
                 ", image='" + image + '\'' +
                 ", description='" + description + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

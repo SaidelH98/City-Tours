@@ -42,15 +42,27 @@ public class LandmarkController {
         }
     }
 
-    @GetMapping("/day/{dayOfOperation}")
-    public List<Landmark> getLandmarkByDay(@PathVariable String dayOfOperation){
-        List<Landmark> landmarksByDay = landmarkDao.getLandmarkByDay(dayOfOperation);
+    @GetMapping("/city/{city}")
+    public List<Landmark> getLandmarkByCity(@PathVariable String city){
+        List<Landmark> landmarksByCity = landmarkDao.getLandmarkByCity(city);
 
-        if (landmarksByDay == null){
+        if (landmarksByCity == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
 
         }else{
-            return landmarksByDay;
+            return landmarksByCity;
+        }
+    }
+
+    @GetMapping("/country/{country}")
+    public List<Landmark> getLandmarkByCountry(@PathVariable String country){
+        List<Landmark> landmarksByCountry = landmarkDao.getLandmarkByCity(country);
+
+        if (landmarksByCountry == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
+
+        }else{
+            return landmarksByCountry;
         }
     }
 
