@@ -42,9 +42,9 @@ public class LandmarkController {
         }
     }
 
-    @GetMapping("/city/{city}")
-    public List<Landmark> getLandmarkByCity(@PathVariable int city_id){
-        List<Landmark> landmarksByCity = landmarkDao.getLandmarkByCity(city_id);
+    @GetMapping("/city/{cityId}")
+    public List<Landmark> getLandmarkByCity(@PathVariable int cityId){
+        List<Landmark> landmarksByCity = landmarkDao.getLandmarkByCity(cityId);
 
         if (landmarksByCity == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");

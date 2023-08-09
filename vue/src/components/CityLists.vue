@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>
-          {{landmarks[0].city}}
+         
       </h1>
       <div>
     
@@ -11,7 +11,7 @@
                 <select v-model="landmarkId">
                     <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId"
                         v-bind:value="landmark.landmarkId">
-                        {{landmark. city}}
+                        {{landmark.city_id}}
                     </option>
                 </select>
 

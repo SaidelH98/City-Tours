@@ -58,14 +58,14 @@ public class JdbcLandmarkDao implements LandmarkDao{
     }
 
     @Override
-    public List<Landmark> getLandmarkByCity(int city_id) {
+    public List<Landmark> getLandmarkByCity(int cityId) {
 
         List<Landmark> landmarkByCity = new ArrayList<>();
 
         String sql = "SELECT landmark_id, name, venue_type, city_id, country, address, image, description\n" +
                 "FROM landmarks WHERE city_id = ?;";
         try {
-            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, city_id);
+            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, cityId);
 
             while (result.next()) {
                 Landmark landmark = mapRowToLandmark(result);

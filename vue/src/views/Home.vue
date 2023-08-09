@@ -7,7 +7,17 @@
     <main class="main">
 
       <div class="rome-card">
-        <h1>Rome</h1>
+        <h1><router-link v-bind:to="{ name: 'rome', params:{cityId:1} }">Rome</router-link></h1>
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
+      </div>
+
+      <div class="Barcelona-card">
+        <h1>Barcelona</h1>
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
+      </div>
+
+      <div class="Zurich-card">
+        <h1>Zurich</h1>
         <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
       </div>
 

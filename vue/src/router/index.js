@@ -31,7 +31,7 @@ const router = new Router({
       }
     },
 {
-    path: '/rome',
+    path: '/rome/:cityId',
     name: 'rome',
     component: Rome,
     meta: {

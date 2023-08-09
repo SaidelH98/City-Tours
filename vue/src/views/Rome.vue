@@ -5,13 +5,10 @@
     </header>
 
     <main class="main">
-      <div class="city-lists">
-        <city-lists />
-      </div>
 
-      <div class="landmarks">
-        <landmarks />
-      </div>
+     
+        <rome-landmarks />
+    
 
     </main>
 
@@ -23,13 +20,13 @@
 </template>
 
 <script>
-import CityLists from '../components/CityLists.vue';
-import Landmarks from '../components/Landmarks.vue';
+
+import RomeLandmarks from '../components/RomeLandmarks.vue';
 
 export default {
   name: "rome",
   components: { 
-    Landmarks, CityLists
+    RomeLandmarks
   }
 };
 </script>
