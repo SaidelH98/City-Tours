@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS schedule, landmarks, users;
+DROP TABLE IF EXISTS schedule, landmarks, city, users;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -8,6 +8,14 @@ CREATE TABLE users (
 	password_hash varchar(200) NOT NULL,
 	role varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
+);
+
+CREATE TABLE city (
+    city_id SERIAL,
+    city_name varchar(50) NOT NULL,
+    city_desc varchar(2000) NOT NULL,
+    city_img varchar(500) NOT NULL,
+    CONSTRAINT PK_city PRIMARY KEY (city_id)
 );
 
 CREATE TABLE landmarks (
@@ -33,12 +41,6 @@ CREATE TABLE schedule (
     CONSTRAINT PK_schedule PRIMARY KEY (id)
 );
 
-CREATE TABLE city {
-    city_id SERIAL,
-    city_name varchar(50) NOT NULL,
-    city_desc varchar(2000) NOT NULL,
-    city_img varchar(500) NOT NULL,
-    CONSTRAINT PK_city PRIMARY KEY (city_id)
-};
+
 
 COMMIT TRANSACTION;
