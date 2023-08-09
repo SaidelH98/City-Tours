@@ -12,7 +12,7 @@
       </div>
 
       <div class="Barcelona-card">
-        <h1>Barcelona</h1>
+        <h1><router-link v-bind:to="{ name: 'barcelona', params:{cityId:2} }">Barcelona</router-link></h1>
         <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
       </div>
 
