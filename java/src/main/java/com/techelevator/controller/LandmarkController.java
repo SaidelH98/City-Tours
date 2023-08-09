@@ -43,8 +43,8 @@ public class LandmarkController {
     }
 
     @GetMapping("/city/{city}")
-    public List<Landmark> getLandmarkByCity(@PathVariable String city){
-        List<Landmark> landmarksByCity = landmarkDao.getLandmarkByCity(city);
+    public List<Landmark> getLandmarkByCity(@PathVariable int city_id){
+        List<Landmark> landmarksByCity = landmarkDao.getLandmarkByCity(city_id);
 
         if (landmarksByCity == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
@@ -56,7 +56,7 @@ public class LandmarkController {
 
     @GetMapping("/country/{country}")
     public List<Landmark> getLandmarkByCountry(@PathVariable String country){
-        List<Landmark> landmarksByCountry = landmarkDao.getLandmarkByCity(country);
+        List<Landmark> landmarksByCountry = landmarkDao.getLandmarkByCountry(country);
 
         if (landmarksByCountry == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
@@ -90,14 +90,5 @@ public class LandmarkController {
         }
     }
 
-    @GetMapping("/city")
-    public List<Landmark>  getCityList(){
-        List<Landmark> cityList = landmarkDao.getCityList();
 
-        if (cityList == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
-        }else{
-            return cityList;
-        }
-    }
 }

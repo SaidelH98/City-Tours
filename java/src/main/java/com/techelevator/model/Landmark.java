@@ -4,17 +4,17 @@ public class Landmark {
     private int landmarkId;
     private String name;
     private String venueType;
-    private String city;
+    private int city_id;
     private String country;
     private String image;
     private String description;
     private String address;
 
-    public Landmark(int landmarkId, String name, String venueType, String city, String country, String image, String description, String address) {
+    public Landmark(int landmarkId, String name, String venueType, int city_id, String country, String image, String description, String address) {
         this.landmarkId = landmarkId;
         this.name = name;
         this.venueType = venueType;
-        this.city = city;
+        this.city_id = city_id;
         this.country = country;
         this.image = image;
         this.description = description;
@@ -49,12 +49,12 @@ public class Landmark {
         this.venueType = venueType;
     }
 
-    public String getCity() {
-        return city;
+    public int getCityId() {
+        return city_id;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCityId(int city_id) {
+        this.city_id = city_id;
     }
 
     public String getCountry() {
@@ -95,7 +95,7 @@ public class Landmark {
                 "landmarkId=" + landmarkId +
                 ", name='" + name + '\'' +
                 ", venueType='" + venueType + '\'' +
-                ", city='" + city + '\'' +
+                ", cityId='" + city_id + '\'' +
                 ", country='" + country + '\'' +
                 ", image='" + image + '\'' +
                 ", description='" + description + '\'' +

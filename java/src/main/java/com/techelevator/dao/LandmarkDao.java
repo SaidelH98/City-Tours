@@ -11,7 +11,7 @@ public interface LandmarkDao {
 
     List<Landmark> getLandmarksByName(String name);
 
-    List<Landmark> getLandmarkByCity(String city);
+    List<Landmark> getLandmarkByCity(int city_id);
 
     List<Landmark> getLandmarkByCountry(String country);
 
@@ -19,5 +19,5 @@ public interface LandmarkDao {
 
     Landmark getLandmarkById(int landmarkId);
 
-   List<Landmark>  getCityList();
+   /*List<Landmark>  getCityList();*/
 }
