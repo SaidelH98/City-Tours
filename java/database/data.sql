@@ -7,6 +7,7 @@ INSERT INTO city (city_name, city_desc, city_img) VALUES ('Rome', 'description',
 INSERT INTO city (city_name, city_desc, city_img) VALUES ('Barcelona', 'description', 'image');
 INSERT INTO city (city_name, city_desc, city_img) VALUES ('Zurich', 'description', 'image');
 INSERT INTO city (city_name, city_desc, city_img) VALUES ('Paris', 'description', 'image');
+INSERT INTO city (city_name, city_desc, city_img) VALUES ('Brussels', 'description', 'image');
 
 INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('The Colosseum', 1, 'Italy', 'Museum', 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sb3NzZXVtfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60', 'Packed with ancient history, the Colosseum is one of the most recognized landmarks and ruins in Rome. Dating back over 2,000 years it was once the ground for legendary gladiator contests that would entertain the masses.', 'Piazza del Colosseo, 1, 00184 Roma RM, Italy');
 INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Roman Forum', 1, 'Italy', 'Museum', 'https://images.pexels.com/photos/17057107/pexels-photo-17057107/free-photo-of-view-of-the-roman-forum-in-rome-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'The Roman Forum is a rectangular forum surrounded by the ruins of several important ancient government buildings at the center of the city of Rome. Citizens of the ancient city referred to this space, originally a marketplace, as the Forum Magnum, or simply the Forum.', 'Via della Salara Vecchia, 5/6, 00186 Roma RM, Italy');
@@ -49,6 +50,18 @@ INSERT INTO landmarks (name, city_id, country, venue_type, image, description, a
 INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Musee de l''Orangerie', '4', 'France', 'Museum', 'https://images.musement.com/cover/0002/62/nympheas-monet-orangerie-jpg_header-161891.jpeg', 'The Musée de l''Orangerie is an art gallery of impressionist and post-impressionist paintings located in the west corner of the Tuileries Garden next to the Place de la Concorde in Paris.', 'Jardin des Tuileries, 75001 Paris, France');
 INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Luxembourg Gardens', '4', 'France', 'Park', 'https://media.cntraveler.com/photos/5952f9ca9034d21207799151/16:9/w_960,c_limit/jardin-du-luxembourg-GettyImages-151514883.jpg', 'The Jardin du Luxembourg, known in English as the Luxembourg Garden, colloquially referred to as the Jardin du Sénat, is located in the 6th arrondissement of Paris, France. Creation of the garden began in 1612 when Marie de'' Medici, the widow of King Henry IV, constructed the Luxembourg Palace as her new residence.', '75006 Paris, France');
 INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Palais Garnier', '4', 'France', 'Theater', 'https://a.cdn-hotels.com/gdcs/production32/d1431/191f1e7d-0e25-4a60-861a-4594c7ae67c9.jpg?impolicy=fcrop&w=800&h=533&q=medium', 'The Palais Garnier, also known as Opéra Garnier, is a 1,979-seat opera house at the Place de l''Opéra in the 9th arrondissement of Paris, France. It was built for the Paris Opera from 1861 to 1875 at the behest of Emperor Napoleon III.', 'Pl. de l''Opéra, 75009 Paris, France');
+
+
+
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Royal Museums of Fine Arts of Belgium', 5, 'Belgium', 'Museum', 'https://static01.nyt.com/images/2022/09/23/arts/20antwerp-museum-01/20antwerp-museum-01-videoSixteenByNine3000.jpg', 'The Royal Museums of Fine Arts of Belgium are a group of art museums in Brussels, Belgium. They include six museums: the Oldmasters Museum, the Magritte Museum, the Fin-de-Siècle Museum, the Modern Museum, the Antoine Wiertz Museum and the Constantin Meunier Museum.', 'Rue de la Régence 3, 1000 Bruxelles, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Porte de Hal', 5, 'Belgium', 'Museum', 'https://www.hallegatemuseum.be/sites/default/files/styles/default_visual/public/2021-12/light15%20%28c%29kmkg-mrah.jpg?h=4a0b8d8b&itok=t85PpEoH', 'The Halle Gate is a former medieval city gate and the last vestige of the second walls of Brussels, Belgium. Built between 1381 and 1383, it was heavily restored in the 19th century in its current neo-Gothic style by the architect Henri Beyaert.', 'Porte de Hal, Bd du Midi 150, 1000 Bruxelles, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Church of Our Lady of Victories at the Sablon', 5, 'Belgium', 'Church', 'https://img.itinari.com/activity/images/original/ba217402-cd07-4cb1-9d10-f421c749d7a7-istock-502857057.jpg?ch=DPR&dpr=1&w=1200&h=800&s=5dc7f3b871b2bd937ee608a9c52e52f8', 'The Church of Our Blessed Lady of the Sablon is a Roman Catholic church located in the Sablon/Zavel district, in the historic centre of Brussels, Belgium. It is dedicated to Our Lady of the Sablon.', 'Rue des Sablons, 1000 Bruxelles, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Royal Gallery of Saint Hubert', 5, 'Belgium', 'Plaza', 'https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Galeries-Royales-Saint-Hubert.jpg', 'The Royal Saint-Hubert Galleries is an ensemble of three glazed shopping arcades in central Brussels, Belgium. It consists of the King''s Gallery, the Queen''s Gallery and the Princes'' Gallery.', 'Galerie du Roi 5, 1000 Brussel, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Grand Place', 5, 'Belgium', 'Plaza', 'https://img.itinari.com/pages/images/original/fd3a2c1b-bccc-4273-845e-026f17130454-istock-cover-sorincolac.jpg?ch=DPR&dpr=2.625&w=1600&s=43b902e2cebacd3eb8a9cc7ce45b3894', 'The Grand-Place or Grote Markt is the central square of Brussels, Belgium. It is surrounded by opulent Baroque guildhalls of the former Guilds of Brussels and two larger edifices; the city''s Flamboyant Town Hall, and the neo-Gothic King''s House or Bread House building, containing the Brussels City Museum.', 'Grote Markt, 1000 Brussel, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Parc du Cinquantenaire', 5, 'Belgium', 'Park', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/37/8f/c4/cinquantenaire-park.jpg?w=1200&h=-1&s=1', 'The Parc du Cinquantenaire or Jubelpark is a large public, urban park of 30 ha in the easternmost part of the European Quarter in Brussels, Belgium.', '1000 Brussels, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('St Michael and St Gudula Cathedral', 5, 'Belgium', 'Church', 'https://www.civitatis.com/f/belgica/bruselas/guia/catedral-bruselas-m.jpg', 'The Cathedral of St. Michael and St. Gudula, usually shortened to the Cathedral of St. Gudula or St. Gudula by locals, is a medieval Roman Catholic cathedral in central Brussels, Belgium.', 'Pl. Sainte-Gudule, 1000 Bruxelles, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Atomium', 5, 'Belgium', 'Monument', 'https://agendabrussels2.imgix.net/83f32c11beb6a3ad9e8ae72d250f6a38d7049025.jpg', 'The Atomium is a landmark modernist building in Brussels, Belgium, originally constructed as the centrepiece of the 1958 Brussels World''s Fair.', 'Pl. de l''Atomium 1, 1020 Bruxelles, Belgium');
+INSERT INTO landmarks (name, city_id, country, venue_type, image, description, address) VALUES ('Manneken Pis', 5, 'Belgium', 'Monument', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/c0/6a/2a/img-20170129-122953-986.jpg?w=1200&h=-1&s=1', 'Manneken Pis is a landmark 55.5 cm bronze fountain sculpture in central Brussels, Belgium, depicting a puer mingens; a naked little boy urinating into the fountain''s basin.', '1000 Brussels, Belgium');
 
 
 
@@ -274,4 +287,159 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (26, 'Thursday', '10', '20');
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (26, 'Friday', '10', '18');
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (26, 'Saturday', '10', '18');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Sunday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Monday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Tuesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Wednesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Thursday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Friday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (27, 'Saturday', '10', '17');
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Sunday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Monday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Tuesday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Wednesday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Thursday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Friday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Saturday', '9', '17');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Sunday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Monday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Tuesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Wednesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Thursday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Friday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Saturday', '0', '24');
+
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Sunday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Monday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Tuesday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Wednesday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Thursday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Friday', '10', '23');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (30, 'Saturday', '10', '23');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Sunday', '10', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Monday', '14', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Tuesday', '11', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Wednesday', '10', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Thursday', '10', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Friday', '10', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (31, 'Saturday', '10', '22');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Sunday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Monday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Wednesday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Thursday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Friday', '9', '22');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (32, 'Saturday', '9', '18');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Sunday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Monday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Wednesday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Thursday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Friday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (33, 'Saturday', '9', '18');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Sunday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Monday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Tuesday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Wednesday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Thursday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Friday', '8', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (34, 'Saturday', '8', '17');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Sunday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Monday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Tuesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Wednesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Thursday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Friday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (35, 'Saturday', '10', '17');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Sunday', '11', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Tuesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Wednesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Thursday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Friday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (36, 'Saturday', '11', '18');
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Sunday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Monday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Tuesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Wednesday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Thursday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (37, 'Saturday', '10', '17');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Sunday', '9', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Monday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Tuesday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Wednesday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Thursday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Friday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Saturday', '9', '18');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Sunday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Monday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Tuesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Wednesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Thursday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Friday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Saturday', '0', '24');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Sunday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Monday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Tuesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Wednesday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Thursday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Friday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Saturday', '0', '24');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Sunday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Tuesday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Wednesday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Thursday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Friday', '9', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Saturday', '10', '17');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Sunday', '14', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Monday', '7', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Tuesday', '7', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Wednesday', '7', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Thursday', '7', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Friday', '7', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (42, 'Saturday', '7', '15');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Sunday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Monday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Tuesday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Wednesday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Thursday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Friday', '10', '18');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (43, 'Saturday', '10', '18');
+
+
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Sunday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Tuesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Wednesday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Thursday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Friday', '10', '17');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (44, 'Saturday', '10', '17');
 COMMIT TRANSACTION;
