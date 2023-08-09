@@ -1,21 +1,21 @@
 <template>
   <div id="register" class="text-center">
-    <form @submit.prevent="register">
+    <form class="form" @submit.prevent="register">
       <h1>Create Account</h1>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <div class="form-input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" v-model="user.username" required autofocus />
+        <label for="username"></label>
+        <input type="text" id="sername" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" v-model="user.password" required />
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Password" v-model="user.password" required />
       </div>
       <div class="form-input-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
+        <label for="confirmPassword"></label>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Account</button>
       <p><router-link :to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
@@ -79,5 +79,11 @@ export default {
 }
 label {
   margin-right: 0.5rem;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <div class="navbar">
-      <NavBar/>
-    </div>
     <header class="header">
        <h1>WELCOME TO CITY TOURS</h1>
     </header>
@@ -34,18 +31,15 @@
     </main>
 
 
- 
 
-
-    
   </div>
 </template>
 
 <script>
-import NavBar from "../components/NavBar.vue"
+
 export default {
   components: { 
-    NavBar
+  
   }
 };
 </script>
@@ -61,16 +55,12 @@ export default {
   grid-area: main;
 }
 
-.navbar{
-  grid-area: navbar;
-  height: 20px;
-}
+
 
 .home{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: 
-  "navbar navbar navbar"
   ". header ." 
   ". main .";
 }
