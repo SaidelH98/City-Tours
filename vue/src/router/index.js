@@ -7,6 +7,8 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Rome from "../views/Rome.vue"
 import Barcelona from "../views/Barcelona.vue"
+import Zurich from "../views/Zurich.vue"
+import Paris from "../views/Paris.vue"
 
 Vue.use(Router)
 
@@ -43,6 +45,22 @@ const router = new Router({
       path: '/barcelona/:cityId',
       name: 'barcelona',
       component: Barcelona,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/zurich/:cityId',
+      name: 'zurich',
+      component: Zurich,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/paris/:cityId',
+      name: 'paris',
+      component: Paris,
       meta: {
         requiresAuth: false
       }

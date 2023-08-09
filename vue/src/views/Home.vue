@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <div class="navbar">
+      <NavBar/>
+    </div>
     <header class="header">
        <h1>WELCOME TO CITY TOURS</h1>
     </header>
@@ -17,7 +20,12 @@
       </div>
 
       <div class="Zurich-card">
-        <h1>Zurich</h1>
+        <h1><router-link v-bind:to="{ name: 'zurich', params:{cityId:3} }">Zurich</router-link></h1>
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
+      </div>
+
+      <div class="Paris-card">
+        <h1><router-link v-bind:to="{ name: 'paris', params:{cityId:4} }">Paris</router-link></h1>
         <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
       </div>
 
@@ -34,10 +42,10 @@
 </template>
 
 <script>
-
+import NavBar from "../components/NavBar.vue"
 export default {
   components: { 
-
+    NavBar
   }
 };
 </script>
@@ -53,11 +61,17 @@ export default {
   grid-area: main;
 }
 
+.navbar{
+  grid-area: navbar;
+  height: 20px;
+}
+
 .home{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: 
-   ". header ." 
+  "navbar navbar navbar"
+  ". header ." 
   ". main .";
 }
 
