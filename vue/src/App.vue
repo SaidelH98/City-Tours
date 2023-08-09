@@ -31,6 +31,10 @@ export default {
   text-decoration: none;
 }
 
+#app{
+  background-color: #f1f1f1;
+}
+
 
 
 
