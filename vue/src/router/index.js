@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import Rome from "../views/Rome.vue"
 
 Vue.use(Router)
 
@@ -29,6 +30,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
+{
+    path: '/rome',
+    name: 'rome',
+    component: Rome,
+    meta: {
+      requiresAuth: false
+    }
+  },
     {
       path: "/login",
       name: "login",

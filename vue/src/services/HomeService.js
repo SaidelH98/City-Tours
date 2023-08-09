@@ -24,6 +24,10 @@ export default {
 
   getLandmarksById(landmarkId) {
     return http.get('landmarks/id/'+ landmarkId)
-  }
+  },
+
+  listAllCities() {
+    return http.get('landmarks/city/')
+  },
 
 }

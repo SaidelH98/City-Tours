@@ -36,7 +36,7 @@ export default {
         }
     },
     created(){
-        HomeService.listAllLandmarks().then((response) =>{
+        HomeService.listAllCities().then((response) =>{
 
             this.landmarks = response.data;
             console.log(response.data);

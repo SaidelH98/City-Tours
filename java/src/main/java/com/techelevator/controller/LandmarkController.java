@@ -89,4 +89,15 @@ public class LandmarkController {
             return landmarkById;
         }
     }
+
+    @GetMapping("/city")
+    public List<Landmark>  getCityList(){
+        List<Landmark> cityList = landmarkDao.getCityList();
+
+        if (cityList == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
+        }else{
+            return cityList;
+        }
+    }
 }

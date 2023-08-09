@@ -5,15 +5,16 @@
     </header>
 
     <main class="main">
-      <div class="city-lists">
-        <city-lists />
+
+      <div class="rome-card">
+        <h1>Rome</h1>
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
       </div>
 
-      <div class="landmarks">
-        <landmarks />
-      </div>
+
 
     </main>
+
 
  
 
@@ -23,12 +24,10 @@
 </template>
 
 <script>
-import CityLists from '../components/CityLists.vue';
-import Landmarks from '../components/Landmarks.vue';
 
 export default {
   components: { 
-    Landmarks, CityLists
+
   }
 };
 </script>
