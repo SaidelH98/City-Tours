@@ -13,12 +13,13 @@ CREATE TABLE users (
 CREATE TABLE landmarks (
 	landmark_id SERIAL,
 	name varchar(50) NOT NULL UNIQUE,
-	city varchar(50) NOT NULL,
+	city_id INT NOT NULL,
 	country varchar(50) NOT NULL,
     venue_type varchar(200) NOT NULL,
 	image varchar(500) NOT NULL,
 	description varchar(2000) NOT NULL,
 	address varchar(500) NOT NULL,
+	CONSTRAINT fk_city FOREIGN KEY(city_id) REFERENCES city(city_id),
 	CONSTRAINT PK_landmark PRIMARY KEY (landmark_id )
 );
 
@@ -31,5 +32,13 @@ CREATE TABLE schedule (
     CONSTRAINT fk_landmark FOREIGN KEY(landmark_id) REFERENCES landmarks(landmark_id),
     CONSTRAINT PK_schedule PRIMARY KEY (id)
 );
+
+CREATE TABLE city {
+    city_id SERIAL,
+    city_name varchar(50) NOT NULL,
+    city_desc varchar(2000) NOT NULL,
+    city_img varchar(500) NOT NULL,
+    CONSTRAINT PK_city PRIMARY KEY (city_id)
+};
 
 COMMIT TRANSACTION;
