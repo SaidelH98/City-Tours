@@ -9,6 +9,8 @@ import Rome from "../views/Rome.vue"
 import Barcelona from "../views/Barcelona.vue"
 import Zurich from "../views/Zurich.vue"
 import Paris from "../views/Paris.vue"
+import Brussels from "../views/Brussels.vue"
+import Munich from "../views/Munich.vue"
 
 Vue.use(Router)
 
@@ -58,9 +60,25 @@ const router = new Router({
       }
     },
     {
+      path: '/brussels/:cityId',
+      name: 'brussels',
+      component: Brussels,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: '/paris/:cityId',
       name: 'paris',
       component: Paris,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/munich/:cityId',
+      name: 'munich',
+      component: Munich,
       meta: {
         requiresAuth: false
       }

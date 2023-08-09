@@ -1,5 +1,5 @@
 <template>
-  <div class="barcelona">
+  <div class="munich">
     <header class="header">
        <h1>WELCOME TO CITY TOURS</h1>
     </header>
@@ -7,7 +7,7 @@
     <main class="main">
 
      
-        <barcelona-landmarks />
+        <munich-landmarks />
     
 
     </main>
@@ -21,12 +21,12 @@
 
 <script>
 
-import BarcelonaLandmarks from '../components/BarcelonaLandmarks.vue';
+import MunichLandmarks from '../components/MunichLandmarks.vue';
 
 export default {
-  name: "barcelona",
+  name: "munich",
   components: { 
-    BarcelonaLandmarks
+    MunichLandmarks
   }
 };
 </script>
@@ -42,7 +42,7 @@ export default {
   grid-area: main;
 }
 
-.barcelona{
+.munich{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: 

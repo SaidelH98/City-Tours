@@ -31,6 +31,18 @@
         </router-link></h1>
       </div>
 
+      <div class="Brussels-card">
+        <h1><router-link v-bind:to="{ name: 'brussels', params:{cityId:5} }">Brussels
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
+        </router-link></h1>
+      </div>
+
+      <div class="Munich-card">
+        <h1><router-link v-bind:to="{ name: 'munich', params:{cityId:6} }">Munich
+        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
+        </router-link></h1>
+      </div>
+
 
 
     </main>

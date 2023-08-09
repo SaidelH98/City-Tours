@@ -1,5 +1,5 @@
 <template>
-  <div class="barcelona">
+  <div class="brussels">
     <header class="header">
        <h1>WELCOME TO CITY TOURS</h1>
     </header>
@@ -7,7 +7,7 @@
     <main class="main">
 
      
-        <barcelona-landmarks />
+        <brussels-landmarks />
     
 
     </main>
@@ -21,12 +21,12 @@
 
 <script>
 
-import BarcelonaLandmarks from '../components/BarcelonaLandmarks.vue';
+import BrusselsLandmarks from '../components/BrusselsLandmarks.vue';
 
 export default {
-  name: "barcelona",
+  name: "brussels",
   components: { 
-    BarcelonaLandmarks
+    BrusselsLandmarks
   }
 };
 </script>
@@ -42,7 +42,7 @@ export default {
   grid-area: main;
 }
 
-.barcelona{
+.brussels{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: 
