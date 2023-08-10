@@ -134,22 +134,22 @@ public class JdbcLandmarkDao implements LandmarkDao{
         }
     }
 
-    /*@Override
-    public List<Landmark>  getCityList() {
 
-        List<Landmark> citylist = new ArrayList<>();
+    public List<String>  getVenueTypeList() {
 
-        String sql = "SELECT DISTINCT(city_id) FROM landmarks";
+        List<String> venueTypeList = new ArrayList<>();
+
+        String sql = "SELECT DISTINCT(venue_type) FROM landmarks";
 
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
             Landmark landmark = new Landmark();
-            landmark.setCityId(result.getInt("city_id"));
-            citylist.add(landmark);
+            landmark.setVenueType(result.getString("venue_type"));
+            venueTypeList.add(landmark.getVenueType());
         }
-        return citylist;
-    }*/
+        return venueTypeList;
+    }
 
     private Landmark mapRowToLandmark(SqlRowSet rs) {
         Landmark landmark = new Landmark();

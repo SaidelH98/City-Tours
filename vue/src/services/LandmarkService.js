@@ -34,4 +34,8 @@ export default {
     return http.get('landmarks/city/'+ cityId)
   },
 
+  getVenueTypeList() {
+    return http.get('landmarks/venue/')
+  },
+
 }

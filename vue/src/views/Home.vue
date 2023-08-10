@@ -84,6 +84,7 @@ export default {
 
 .rome-card{
   border-radius: 0.5rem;
+  background-color: white;
 
 
 }

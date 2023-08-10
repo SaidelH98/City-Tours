@@ -90,5 +90,17 @@ public class LandmarkController {
         }
     }
 
+    @GetMapping("/venue")
+    public List<String> getVenueTypeList(){
+        List<String> landmarksByVenueType = landmarkDao.getVenueTypeList();
+
+        if (landmarksByVenueType == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
+
+        }else{
+            return landmarksByVenueType;
+        }
+    }
+
 
 }

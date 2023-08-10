@@ -19,5 +19,5 @@ public interface LandmarkDao {
 
     Landmark getLandmarkById(int landmarkId);
 
-   /*List<Landmark>  getCityList();*/
+    List<String> getVenueTypeList();
 }
