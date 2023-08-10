@@ -7,8 +7,8 @@
         <div v-for="schedule in schedules" v-bind:key="schedule.landmarkId">
             <div class="schedule">
                 <span class="scheduleDay"> {{schedule.dayOfOperation}} </span>
-                <span class="scheduleOpenTime"> {{schedule.openTime}} </span>
-                <span class="scheduleCloseTime"> {{schedule.closeTime}} </span>
+                <span class="scheduleOpenTime"> {{schedule.openTime}}:00 AM - </span>
+                <span class="scheduleCloseTime"> {{schedule.closeTime > 12? schedule.closeTime - 12: schedule.closeTime}}:00 PM</span>
             </div>
         </div>
       </div>
@@ -35,9 +35,23 @@ export default {
             this.schedules = response.data;
             console.log(response.data);
         })
+    },
+    methods: {
+    convertCloseTime(){
+        if(this.schedules.closeTime > 12){
+           let newFormat = this.schedules.closeTime - 12;
+            return newFormat;
+        }else{
+            return this.schedules.closeTime;
+        }
+    }
     }
 }
 </script>
 <style>
+
+.schedule{
+    
+}
 
 </style>

@@ -21,7 +21,7 @@ export default {
 <style scoped>
 
 #nav{
-  background-color: red;
+  background-color: gray;
   height: 60px;
   font-size: 30px;
   text-decoration: none;
@@ -32,7 +32,9 @@ export default {
 }
 
 #app{
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; 
+  
+  font-family:sans-serif;
 }
 
 
