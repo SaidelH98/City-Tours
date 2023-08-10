@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
     .landmarkName{
         grid-area: name;
@@ -111,4 +111,4 @@ export default {
 
 
     
-</style>
+</style >

@@ -6,9 +6,9 @@
       <div>
         <div v-for="schedule in schedules" v-bind:key="schedule.landmarkId">
             <div class="schedule">
-                <div class="scheduleDay"> {{schedule.dayOfOperation}} </div>
-                <div class="scheduleOpenTime"> {{schedule.openTime}} </div>
-                <div class="scheduleCloseTime"> {{schedule.closeTime}} </div>
+                <span class="scheduleDay"> {{schedule.dayOfOperation}} </span>
+                <span class="scheduleOpenTime"> {{schedule.openTime}} </span>
+                <span class="scheduleCloseTime"> {{schedule.closeTime}} </span>
             </div>
         </div>
       </div>
@@ -19,6 +19,9 @@
 import ScheduleService from '../services/ScheduleService'
 export default {
     name : 'landmark-schedule',
+    props: [
+        "landmarkId"
+    ],
     data() {
         return {
             schedules: [
@@ -27,7 +30,7 @@ export default {
         }
     },
      created(){
-        ScheduleService.getScheduleByLandmarkId(this.schedules.landmarkId).then((response) =>{
+        ScheduleService.getScheduleByLandmarkId(this.landmarkId).then((response) =>{
 
             this.schedules = response.data;
             console.log(response.data);

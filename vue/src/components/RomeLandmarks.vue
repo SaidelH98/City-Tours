@@ -13,7 +13,7 @@
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
                 <div class="landmarkDescription"> {{landmark.description}} </div>
-                <div class="landmarkSchedule"> <landmark-schedule/> </div>
+                <div class="landmarkSchedule"> <landmark-schedule v-bind:landmarkId="landmark.landmarkId"/> </div>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
 <script>
 import LandmarkService from "../services/LandmarkService"
 
-import LandmarkSchedule from './LandmarkSchedule.vue'
+import LandmarkSchedule from './LandmarkSchedule'
 
 
 export default {
@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
     .landmarkName{
         grid-area: name;
@@ -76,10 +76,6 @@ export default {
 
     .landmarkVenue{
         grid-area: venue;
-    }
-
-    .landmarkDay{
-        grid-area: day;
     }
 
     .landmarkImage{
@@ -107,7 +103,6 @@ export default {
     .landmark{
         display: grid;
         border: solid;
-        flex-direction: column;
         /*height: 700px;*/
         grid-template-columns: 
         1fr 1fr;
