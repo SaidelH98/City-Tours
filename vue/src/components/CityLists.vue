@@ -6,37 +6,35 @@
       <div>
     
 
-            <div class="landmark">
-                <label>Cities:</label>
-                <select v-model="landmarkId">
-                    <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId"
-                        v-bind:value="landmark.landmarkId">
-                        {{landmark.city_id}}
-                    </option>
-                </select>
-
-
-                
-            </div>
+        <div class="city-list">
+            <div v-for="city in cities" v-bind:key="city.cityId">
+                <div class="city">
+                    <div class="cityName"> {{city.city_name}} </div>
+                    <div class="cityDesc"> {{city.city_desc}} </div>
+                    <div class="cityImg"> <img v-bind:src=city.city_img alt=""></div>
+                </div>
+            </div>        
+     </div>
 
       </div>
   </div>
 </template>
 
 <script>
-import HomeService from '../services/HomeService'
+import CityService from '../services/CityService'
+
 export default {
-    name : 'landmarks',
+    name : 'city-lists',
     data() {
         return {
-            landmarks: [
+            cities: [
 
             ],
-            landmarkId: 0
+            
         }
     },
     created(){
-        HomeService.listAllCities().then((response) =>{
+        CityService.listAllCities().then((response) =>{
 
             this.landmarks = response.data;
             console.log(response.data);

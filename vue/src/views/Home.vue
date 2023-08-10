@@ -6,41 +6,111 @@
 
     <main class="main">
 
-      <div class="rome-card">
-        <h1><router-link v-bind:to="{ name: 'rome', params:{cityId:1} }">Rome
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        <p>Description hjkl;dffggfhgfhghghghhgf</p>
-        </router-link></h1>
+      <city-lists />
+
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'rome', params:{cityId:1} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[0].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[0].cityName}}</div>
+          <div class="city-description">
+            {{cities[0].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
-      <div class="Barcelona-card">
-        <h1><router-link v-bind:to="{ name: 'barcelona', params:{cityId:2} }">Barcelona
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        </router-link></h1>
+     <br>
+     <br>
+
+
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'barcelona', params:{cityId:2} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[1].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[1].cityName}}</div>
+          <div class="city-description">
+            {{cities[1].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
-      <div class="Zurich-card">
-        <h1><router-link v-bind:to="{ name: 'zurich', params:{cityId:3} }">Zurich
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        </router-link></h1>
+      <br>
+      <br>
+
+      
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'zurich', params:{cityId:3} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[2].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[2].cityName}}</div>
+          <div class="city-description">
+            {{cities[2].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
-      <div class="Paris-card">
-        <h1><router-link v-bind:to="{ name: 'paris', params:{cityId:4} }">Paris
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        </router-link></h1>
+      <br>
+      <br>
+
+
+            
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'paris', params:{cityId:4} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[3].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[3].cityName}}</div>
+          <div class="city-description">
+            {{cities[3].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
-      <div class="Brussels-card">
-        <h1><router-link v-bind:to="{ name: 'brussels', params:{cityId:5} }">Brussels
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        </router-link></h1>
+      <br>
+      <br>
+            
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'brussels', params:{cityId:5} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[4].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[4].cityName}}</div>
+          <div class="city-description">
+            {{cities[4].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
-      <div class="Munich-card">
-        <h1><router-link v-bind:to="{ name: 'munich', params:{cityId:6} }">Munich
-        <img src="../assets/images/Rome/david-kohler-VFRTXGw1VjU-unsplash.jpg" alt="">
-        </router-link></h1>
+
+        <br>
+        <br>
+
+            
+      <div class="city-card">
+        <router-link v-bind:to="{ name: 'munich', params:{cityId:6} }">
+        <div class="city-image">
+          <div class="landmarkImage"> <img v-bind:src=cities[5].cityImg alt="">  </div>
+        </div>
+        <div class="city-info">
+          <div class="city-name"> {{cities[5].cityName}}</div>
+          <div class="city-description">
+            {{cities[5].cityDesc}}
+          </div>
+        </div>
+        </router-link>
       </div>
 
 
@@ -54,11 +124,26 @@
 
 <script>
 
+import CityService from '../services/CityService'
+
 export default {
-  components: { 
-  
-  }
-};
+    data() {
+        return {
+            cities: [
+
+            ],
+            
+        }
+},
+
+    created(){
+        CityService.listAllCities().then((response) =>{
+            this.cities = response.data;
+            console.log(response.data);
+        })
+    }
+
+}
 </script>
 <style scoped>
 
@@ -82,11 +167,25 @@ export default {
   ". main .";
 }
 
-.rome-card{
-  border-radius: 0.5rem;
+.city-card, .barcelona-card{
   background-color: white;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 
+}
 
+.city-name{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.city-info{
+  height: 150px;
+  text-align: center;
+}
+
+.city-description{
+  text-decoration: none;
 }
 img{
         width: 100%;
