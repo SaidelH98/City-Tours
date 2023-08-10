@@ -2,14 +2,17 @@
   <div>
       <h1>
           List of Landmarks
+          
       </h1>
       <div>
+          <landmark-schedule />
         <div v-for="landmark in landmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
                 <div class="landmarkName"> {{landmark.name}} </div>
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
                 <div class="landmarkDescription"> {{landmark.description}} </div>
+                <div class="landmarkSchedule">  </div>
             </div>
         </div>
       </div>
@@ -18,8 +21,11 @@
 
 <script>
 import HomeService from '../services/HomeService'
+import ScheduleService from '../services/ScheduleService'
+
 export default {
     name : 'landmarks',
+
     data() {
         return {
             landmarks: [
@@ -31,6 +37,13 @@ export default {
         HomeService.listAllLandmarks().then((response) =>{
 
             this.landmarks = response.data;
+            console.log(response.data);
+        })
+    },
+   
+        ScheduleService.getAllSchedules().then((response) =>{
+
+            this.schedules = response.data;
             console.log(response.data);
         })
     }
@@ -65,6 +78,10 @@ export default {
         text-align: center;
     }
 
+    .landmarkSchedule{
+        grid-area: schedule;
+    }
+
 
         
         
@@ -83,7 +100,7 @@ export default {
         "name image"
         "venue image"
         "description image"
-        "description image";
+        "schedule image";
     }
 
         img{

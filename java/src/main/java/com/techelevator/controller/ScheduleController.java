@@ -53,7 +53,7 @@ public class ScheduleController {
     }
 
     @GetMapping("/time/{time}")
-    public List<Schedule> getScheduleByOpenTime(@PathVariable int time){
+    public List<Schedule> getScheduleByTime(@PathVariable int time){
         List<Schedule> scheduleByTime = scheduleDao.getScheduleByTime(time);
 
         if (scheduleByTime == null){

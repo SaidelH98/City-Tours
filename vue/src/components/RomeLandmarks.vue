@@ -13,6 +13,7 @@
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
                 <div class="landmarkDescription"> {{landmark.description}} </div>
+                <div class="landmarkSchedule"> <landmark-schedule/> </div>
             </div>
         </div>
 
@@ -23,12 +24,21 @@
 <script>
 import LandmarkService from "../services/LandmarkService"
 
+import LandmarkSchedule from './LandmarkSchedule.vue'
+
 
 export default {
     name : 'rome-landmarks',
+    components:{
+        LandmarkSchedule
+    },
     data() {
         return {
             landmarks: [
+            ],
+
+            schedules: [
+
             ],
             search: ""
         }
@@ -83,6 +93,10 @@ export default {
         text-align: center;
     }
 
+    .landmarkSchedule {
+        grid-area: schedule;
+    }
+
 
         
         
@@ -100,7 +114,7 @@ export default {
         grid-template-areas:
         "name image"
         "venue image"
-        "description image"
+        "schedule image"
         "description image";
     }
 
