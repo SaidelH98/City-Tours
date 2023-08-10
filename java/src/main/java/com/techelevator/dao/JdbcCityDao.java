@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.City;
+import com.techelevator.model.Landmark;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -21,15 +22,28 @@ public class JdbcCityDao implements CityDao{
 
         List<City> citylist = new ArrayList<>();
 
-        String sql = "SELECT city_name FROM city";
+        String sql = "SELECT city_id, city_name, city_desc, city_img FROM city";
 
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
-            City city = new City();
-            city.setCityName(result.getString("city_name"));
+            City city = mapRowToCity(result);
             citylist.add(city);
         }
         return citylist;
     }
+
+    private City mapRowToCity(SqlRowSet rs) {
+        City city = new City();
+
+        city.setCityId(rs.getInt("city_id"));
+        city.setCityName(rs.getString("city_name"));
+        city.setCityDesc(rs.getString("city_desc"));
+        city.setCityImg(rs.getString("city_img"));
+
+        return city;
+    }
+
+
+
 }
