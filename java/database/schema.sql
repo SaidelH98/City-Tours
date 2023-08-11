@@ -43,10 +43,12 @@ CREATE TABLE schedule (
 
 CREATE TABLE itinerary (
     itinerary_id SERIAL,
+    user_id int NOT NULL,
     name varchar(50) NOT NULL,
     starting_point varchar(500) NOT NULL,
     date date,
-    CONSTRAINT PK_itinerary PRIMARY KEY (itinerary_id)
+    CONSTRAINT PK_itinerary PRIMARY KEY (itinerary_id),
+    CONSTRAINT fk_itinerary FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE itinerary_landmarks (

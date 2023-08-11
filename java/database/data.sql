@@ -535,7 +535,7 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Friday', '0', '24');
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Saturday', '0', '24');
 
-INSERT INTO itinerary (name, starting_point, date) VALUES ('Rome Itinerary', 'Via Milano, 42, 00184 Roma RM, Italy', '2023-08-21');
+INSERT INTO itinerary (user_id, name, starting_point, date) VALUES (1, 'Rome Itinerary', 'Via Milano, 42, 00184 Roma RM, Italy', '2023-08-21');
 
 INSERT INTO itinerary_landmarks(itinerary_id, landmark_id, itinerary_order) VALUES (1, 1, 1);
 INSERT INTO itinerary_landmarks(itinerary_id, landmark_id, itinerary_order) VALUES (1, 5, 3);
