@@ -3,9 +3,18 @@
     <div class="navbar">
     </div>
     <div id="nav" >
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == '' "> Login</router-link>&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <span class="home">
+        <router-link v-bind:to="{ name: 'home' }">Home</router-link>
+      </span>
+
+      <span class="itinerary">
+        <router-link v-bind:to="{ name: 'itinerary' }"  v-if="$store.state.token != ''">My Itineraries</router-link>
+      </span>
+
+      <span class="login">
+        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == '' "> Login</router-link>
+        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      </span>
     </div>
     <router-view />
   </div>
@@ -21,10 +30,12 @@ export default {
 <style scoped>
 
 #nav{
-  background-color: gray;
+  background-color: rgb(41, 40, 40);
   height: 60px;
   font-size: 30px;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-text{
@@ -42,6 +53,14 @@ a{
 }
 
 
+.home{
+  margin-top: 10px;
+  margin-left: 40px;
+}
 
+.login{
+  margin: 10px;
+  margin-right: 40px;
+}
 
 </style>

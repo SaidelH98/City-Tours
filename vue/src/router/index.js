@@ -11,6 +11,8 @@ import Zurich from "../views/Zurich.vue"
 import Paris from "../views/Paris.vue"
 import Brussels from "../views/Brussels.vue"
 import Munich from "../views/Munich.vue"
+import Itinerary from "../views/Itinerary.vue"
+import ItineraryForm from "../views/ItineraryForm.vue"
 
 Vue.use(Router)
 
@@ -83,6 +85,25 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
+    {
+      path: "/itinerary",
+      name: "itinerary",
+      component: Itinerary,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
+    {
+      path: "/itinerary/form",
+      name: "itinerary-form",
+      component: ItineraryForm,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
     {
       path: "/login",
       name: "login",

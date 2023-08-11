@@ -5,10 +5,46 @@
       </h1>
       <div>
 
+        <div>
+            <form v-on:submit.prevent="onCreateReservation">
+                <div>
+                    <label>Landmarks:</label>
+                    <select v-model="landmark.landmarkId">
+                        <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId">
+                            {{landmark.name}}
+                        </option>
+                    </select>
+                    <label>Itinerary Name:</label>
+                    <input type="text" required />
+                </div>
+                <div>
+                    <label>Starting Point:</label>
+                    <input type="text"  required/>
+                </div>
+                <div>
+                    <label>Itinerary Date</label>
+                    <input type="date" required/>
+                </div>
+                
+                <!--- <button type="submit" class="button">Save Itinerary</button> --->
+                <input type="submit" value="Create Reservation" />
+            </form>
+       </div>
+
+ 
+
         <input type="text" v-model="search" placeholder="Search Landmark" />
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
+               <div class="checkbox">
+                   <!--
+                    <router-link v-bind:to="{ name: 'itinerary-form' }">
+             
+                        <button>Add to Itinerary</button>
+                    </router-link>
+                    -->
+                </div>
                 <div class="landmarkName"> {{landmark.name}} </div>
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
@@ -24,8 +60,8 @@
 
 <script>
 import LandmarkService from "../services/LandmarkService"
-
 import LandmarkSchedule from './LandmarkSchedule'
+import ItineraryService from '../services/ItineraryService'
 
 
 export default {
@@ -41,7 +77,14 @@ export default {
             schedules: [
 
             ],
-            search: ""
+            search: "",
+
+            itinerary: {
+                userId: 0,
+                name: "",
+                startingPoint: "",
+                date: "",
+            }
         }
     },
 
@@ -61,6 +104,24 @@ export default {
                 landmark.description.toLowerCase().includes(this.search.toLowerCase())
             })
         },
+
+    methods:{
+        onCreation(){
+            ItineraryService.createItinerary(this.itinerary).then((response)=>{
+                const itineraryId = response.data.itinerary_id;
+                const userId = response.data.userId;
+                const route = {
+                    name: "created",
+                    params: {
+                        itineraryId: itineraryId,
+                        userid: userId
+                    }
+                };
+                this.$router.push(route)
+            })
+
+        }
+    }
 
     }
     
@@ -96,6 +157,8 @@ export default {
     .landmarkSchedule {
         grid-area: schedule;
         text-align: center;
+        color: rgb(58, 58, 58);
+
     }
 
 
@@ -104,7 +167,13 @@ export default {
 
     .landmarkDescription{
         grid-area: description;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: rgb(58, 58, 58);
     }
+
+
     .landmark{
         display: grid;
         margin-bottom: 30px;

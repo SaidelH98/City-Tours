@@ -72,10 +72,13 @@ export default {
 
     .landmarkName{
         grid-area: name;
+        font-size: 25px;
+        text-align: center;
     }
 
     .landmarkVenue{
         grid-area: venue;
+        text-align: center;
     }
 
     .landmarkImage{
@@ -91,26 +94,37 @@ export default {
 
     .landmarkSchedule {
         grid-area: schedule;
+        text-align: center;
+        color: rgb(58, 58, 58);
+
     }
 
 
         
         
 
-    .landmarkDescription{
+     .landmarkDescription{
         grid-area: description;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: rgb(58, 58, 58);
     }
+
+
     .landmark{
         display: grid;
-        border: solid;
+        margin-bottom: 30px;
+        background-color: white;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
         /*height: 700px;*/
         grid-template-columns: 
         1fr 1fr;
         grid-template-areas:
         "name image"
         "venue image"
-        "schedule image"
-        "description image";
+        "description image"
+        "schedule image";
     }
 
         img{
