@@ -33,8 +33,12 @@ export default {
 
 #app{
   background-color: #f1f1f1; 
-  
   font-family:sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
 
 

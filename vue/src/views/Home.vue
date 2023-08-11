@@ -193,6 +193,17 @@ img{
         /*height: max-content;*/
         }
 
+a:link{
+  text-decoration: none;
+
+}
+
+a:visited {
+  color: rgb(58, 58, 58)
+}
+
+
+
 </style>
 
 
