@@ -12,9 +12,11 @@ import java.util.List;
 public class JdbcItineraryDao implements ItineraryDao{
 
     private final JdbcTemplate jdbcTemplate;
+    private final UserDao userDao;
 
-    public JdbcItineraryDao(JdbcTemplate jdbcTemplate) {
+    public JdbcItineraryDao(JdbcTemplate jdbcTemplate, UserDao userDao) {
         this.jdbcTemplate = jdbcTemplate;
+        this.userDao = userDao;
     }
 
     @Override
@@ -53,16 +55,16 @@ public class JdbcItineraryDao implements ItineraryDao{
     }
 
     @Override
-    public Itinerary createItinerary(Itinerary itinerary) {
+    public Itinerary createItinerary(Itinerary itinerary, String username) {
         Itinerary newItinerary = null;
-
-        String sql = "INSERT INTO itinerary (user_id, name, starting_point, date) VALUES(?, ?, ?, ?) RETURNING itinerary_id";
+        int userId = userDao.findIdByUsername(username);
+        String sql = "INSERT INTO itinerary (user_id, name, starting_point, date) VALUES(?, ?, ?, ?) RETURNING itinerary_id;";
 
         try{
-            int newItineraryId = jdbcTemplate.queryForObject(sql, int.class, itinerary.getUserId(), itinerary.getName(), itinerary.getStartingPoint(), itinerary.getDate());
+            int newItineraryId = jdbcTemplate.queryForObject(sql, int.class, userId, itinerary.getName(), itinerary.getStartingPoint(), itinerary.getDate());
             newItinerary = getItineraryByItineraryId(newItineraryId);
         }catch(Exception ex){
-            System.out.println("Something went wrong.");
+            System.out.println("Something wrong.");
         }
         return newItinerary;
     }

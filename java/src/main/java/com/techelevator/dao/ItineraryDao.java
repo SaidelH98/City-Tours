@@ -8,7 +8,7 @@ public interface ItineraryDao {
 
     List<Itinerary> getItinerariesByUserId(int userId);
 
-    Itinerary createItinerary(Itinerary itinerary);
+    Itinerary createItinerary(Itinerary itinerary, String username);
 
     void deleteItinerary(int itineraryId);
 

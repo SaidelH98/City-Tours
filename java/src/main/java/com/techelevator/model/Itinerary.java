@@ -3,8 +3,8 @@ package com.techelevator.model;
 import java.util.Date;
 
 public class Itinerary {
-    private int itineraryId;
-    private int userId;
+    private Integer itineraryId;
+    private Integer userId;
     private String name;
     private String startingPoint;
     private Date date;
