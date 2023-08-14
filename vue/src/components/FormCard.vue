@@ -8,7 +8,6 @@
         <div>
             <form v-on:submit.prevent="onCreation()">
                 <div>
-                    
                     <label>Itinerary Name:</label>
                     <input type="text" v-model="itinerary.name" required />
                 </div>

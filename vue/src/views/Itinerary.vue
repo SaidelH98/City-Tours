@@ -4,17 +4,24 @@
        <h1>My Itineraries</h1>
     </header>
 
-    
-       <div v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
-            <div class="itinerary">
-               <div class="itineraryName"> {{itinerary.name}} </div>
-               <div class="itineraryStartingPoint"> {{itinerary.startingPoint}} </div>
-               <div class="itineraryDate"> {{itinerary.date}} </div>
-                
-                
-            </div>
-        </div>
-
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Starting Point</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
+            <tr>
+                <td class="itineraryName"> {{itinerary.name}} </td>
+                <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
+                <td class="itineraryDate"> {{itinerary.date}} </td>               
+            </tr>
+          </div>
+        </tbody>
+      </table>
     
 
 
@@ -61,6 +68,9 @@ export default {
 };
 </script>
 <style scoped>
+  table{
+    border: 1px solid
+  }
 
 
 </style>
