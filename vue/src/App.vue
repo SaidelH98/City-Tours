@@ -8,7 +8,8 @@
       </span>
 
       <span class="itinerary">
-        <router-link v-bind:to="{ name: 'itinerary' }"  v-if="$store.state.token != ''">My Itineraries</router-link>
+        <router-link v-bind:to="{ name: 'itinerary' }"  v-if="$store.state.token != ''">Profile</router-link>
+
       </span>
 
       <span class="login">

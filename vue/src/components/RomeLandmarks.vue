@@ -6,7 +6,7 @@
       <div>
 
         <div>
-            <form v-on:submit.prevent="onCreation">
+            <form v-on:submit.prevent="onCreation()">
                 <div>
                     <label>Landmarks:</label>
                     <select v-model="itinerary.itineraryId">
@@ -79,7 +79,7 @@ export default {
             search: "",
 
             itinerary: {
-                userId: 0,
+                userId: this.$store.state.user.id,
                 name: "",
                 startingPoint: "",
                 date: "",
@@ -103,15 +103,17 @@ export default {
                 ||
                 landmark.description.toLowerCase().includes(this.search.toLowerCase())
             })
-        },
+        }
+    },
 
     methods:{
         onCreation(){
+            console.log(this.itinerary);
             ItineraryService.createItinerary(this.itinerary).then((response)=>{
                 const itineraryId = response.data.itinerary_id;
                 const userId = response.data.userId;
                 const route = {
-                    name: "created",
+                    name: "Home",
                     params: {
                         itineraryId: itineraryId,
                         userid: userId
@@ -122,9 +124,6 @@ export default {
 
         }
     }
-
-    }
-    
 
 
 }
