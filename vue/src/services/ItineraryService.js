@@ -44,11 +44,11 @@ export default {
   },
 
   getItinerariesByUserId(userId) {
-    return axios.get('itinerary/id/'+ userId)
+    return axios.get('itinerary/user/'+ userId)
   },
 
-  createItinerary(itinerary) {
-    return axios.post('itinerary/', itinerary)
+  createItinerary(itinerary, landmarkId) {
+    return axios.post('itinerary/' + landmarkId, itinerary)
   },
 
   

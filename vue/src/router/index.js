@@ -87,8 +87,8 @@ const router = new Router({
     },
 
     {
-      path: "/itinerary",
-      name: "itinerary",
+      path: "/profile/:userId",
+      name: "profile",
       component: Itinerary,
       meta: {
         requiresAuth: true

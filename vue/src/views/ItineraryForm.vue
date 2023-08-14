@@ -20,7 +20,7 @@
 import FormCard from "../components/FormCard.vue"
 
 export default {
-  name: "itinerary-form",
+  name: "itinerary",
   components: { 
     FormCard
   

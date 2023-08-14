@@ -8,7 +8,7 @@
       </span>
 
       <span class="itinerary">
-        <router-link v-bind:to="{ name: 'itinerary' }"  v-if="$store.state.token != ''">Profile</router-link>
+        <router-link v-bind:to="{ name: 'profile', params: {userId: this.$store.state.user.id} }"  v-if="$store.state.token != ''">Profile</router-link>
 
       </span>
 
@@ -23,6 +23,9 @@
 <script>
 
 export default {
+  props:[
+    "userId"
+  ],
   components: { 
     
   }

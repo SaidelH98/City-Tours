@@ -8,13 +8,6 @@
         <div>
             <form v-on:submit.prevent="onCreation()">
                 <div>
-                    <label>Landmarks:</label>
-                    <select v-model="itinerary.itineraryId">
-                        <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId" v-bind:value="landmark.landmarkId">
-                            {{landmark.name}}
-                        </option>
-                    </select>
-                    <div></div>
                     
                     <label>Itinerary Name:</label>
                     <input type="text" v-model="itinerary.name" required />
@@ -29,7 +22,11 @@
                 </div>
                 
                 <!--- <button type="submit" class="button">Save Itinerary</button> --->
-                <input type="submit" value="Create Itinerary" />
+                
+                <div class="button" >
+                        <input type="submit" value="Create Itinerary" />
+
+                </div>
             </form>
        </div>
 
@@ -44,6 +41,9 @@ import ItineraryService from '../services/ItineraryService'
 
 export default {
     name : 'form-card',
+    props:[
+        "userId"
+    ],
     data() {
         return {
             landmarks: [],
@@ -72,12 +72,10 @@ export default {
         onCreation(){
             console.log(this.itinerary);
             ItineraryService.createItinerary(this.itinerary).then((response)=>{
-                const itineraryId = response.data.itinerary_id;
                 const userId = response.data.userId;
                 const route = {
-                    name: "Home",
+                    name: "profile/:userId",
                     params: {
-                        itineraryId: itineraryId,
                         userid: userId
                     }
                 };

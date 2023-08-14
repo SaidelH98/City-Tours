@@ -38,7 +38,7 @@
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
-               <div class="button" v-on:click="storeLandmarkId()">
+               <div class="button" >
                     <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
                         <button>Add to Itinerary</button>
                     </router-link>
@@ -123,13 +123,7 @@ export default {
                 this.$router.push(route)
             })
 
-        },
-
-        storeLandmarkId(){
-            const landmarkId = this.landmarks.landmarkId;
-            return landmarkId;
         }
-
     }
 
 
