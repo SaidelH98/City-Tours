@@ -33,42 +33,17 @@
             </form>
        </div>
 
-
-        <input type="text" v-model="search" placeholder="Search Landmark" />
-
-        <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
-            <div class="landmark">
-               <div class="button">
-                    <router-link v-bind:to="{ name: 'itinerary-form' }">
-                        <button>Add to Itinerary</button>
-                    </router-link>
-                
-                </div>
-                <div class="landmarkName"> {{landmark.name}} </div>
-                <div class="landmarkVenue"> {{landmark.venueType}} </div>
-                <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
-                <div class="landmarkDescription"> {{landmark.description}} </div>
-                <div class="landmarkSchedule"> <landmark-schedule v-bind:landmarkId="landmark.landmarkId"/> </div>
-
-                
-            </div>
-        </div>
-
       </div>
   </div>
 </template>
 
 <script>
 import LandmarkService from "../services/LandmarkService"
-import LandmarkSchedule from './LandmarkSchedule'
 import ItineraryService from '../services/ItineraryService'
 
 
 export default {
-    name : 'rome-landmarks',
-    components:{
-        LandmarkSchedule
-    },
+    name : 'form-card',
     data() {
         return {
             landmarks: [],
@@ -92,17 +67,6 @@ export default {
 
         })
     },
-    computed: {
-        filteredLandmarks:function () {
-            return this.landmarks.filter((landmark) =>{
-                return landmark.name.toLowerCase().includes(this.search.toLowerCase())
-                ||
-                landmark.venueType.toLowerCase().includes(this.search.toLowerCase())
-                ||
-                landmark.description.toLowerCase().includes(this.search.toLowerCase())
-            })
-        }
-    },
 
     methods:{
         onCreation(){
@@ -124,10 +88,10 @@ export default {
 
         onClick(){
             ItineraryService.createItinerary(this.itinerary).then((response)=>{
-                const landmarkId = this.landmarkId
+                const itineraryId = response.data.itinerary_id;
                 const userId = response.data.userId;
                 const route = {
-                    name: "Profile",
+                    name: "Home",
                     params: {
                         itineraryId: itineraryId,
                         userid: userId

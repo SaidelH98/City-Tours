@@ -6,6 +6,7 @@
     </header>
 
     <main class="main">
+      <form-card />
 
 
     
@@ -16,11 +17,12 @@
 </template>
 
 <script>
-
+import FormCard from "../components/FormCard.vue"
 
 export default {
   name: "itinerary-form",
   components: { 
+    FormCard
   
   }
 };
