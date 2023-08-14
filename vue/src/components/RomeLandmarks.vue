@@ -6,28 +6,30 @@
       <div>
 
         <div>
-            <form v-on:submit.prevent="onCreateReservation">
+            <form v-on:submit.prevent="onCreation">
                 <div>
                     <label>Landmarks:</label>
-                    <select v-model="landmark.landmarkId">
-                        <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId">
+                    <select v-model="itinerary.itineraryId">
+                        <option v-for="landmark in landmarks" v-bind:key="landmark.landmarkId" v-bind:value="landmark.landmarkId">
                             {{landmark.name}}
                         </option>
                     </select>
+                    <div></div>
+                    
                     <label>Itinerary Name:</label>
-                    <input type="text" required />
+                    <input type="text" v-model="itinerary.name" required />
                 </div>
                 <div>
                     <label>Starting Point:</label>
-                    <input type="text"  required/>
+                    <input type="text" v-model="itinerary.startingPoint" required/>
                 </div>
                 <div>
                     <label>Itinerary Date</label>
-                    <input type="date" required/>
+                    <input type="date" v-model="itinerary.date" required/>
                 </div>
                 
                 <!--- <button type="submit" class="button">Save Itinerary</button> --->
-                <input type="submit" value="Create Reservation" />
+                <input type="submit" value="Create Itinerary" />
             </form>
        </div>
 
@@ -71,12 +73,9 @@ export default {
     },
     data() {
         return {
-            landmarks: [
-            ],
+            landmarks: [],
 
-            schedules: [
-
-            ],
+            schedules: [],
             search: "",
 
             itinerary: {
@@ -92,6 +91,7 @@ export default {
         const cityId = this.$route.params.cityId;
         LandmarkService.getLandmarksByCity(cityId).then((response) =>{
             this.landmarks = response.data;
+
         })
     },
     computed: {
