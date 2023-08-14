@@ -71,10 +71,10 @@ export default {
     methods:{
         onCreation(){
             console.log(this.itinerary);
-            ItineraryService.createItinerary(this.itinerary).then((response)=>{
+            ItineraryService.createItinerary(this.itinerary, this.$route.params.landmarkId).then((response)=>{
                 const userId = response.data.userId;
                 const route = {
-                    name: "profile/:userId",
+                    name: "profile",
                     params: {
                         userid: userId
                     }
@@ -89,7 +89,7 @@ export default {
                 const itineraryId = response.data.itinerary_id;
                 const userId = response.data.userId;
                 const route = {
-                    name: "Home",
+                    name: "profile",
                     params: {
                         itineraryId: itineraryId,
                         userid: userId
