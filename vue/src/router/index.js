@@ -96,7 +96,7 @@ const router = new Router({
     },
 
     {
-      path: "/itinerary/form",
+      path: "/itinerary/:landmarkId",
       name: "itinerary-form",
       component: ItineraryForm,
       meta: {

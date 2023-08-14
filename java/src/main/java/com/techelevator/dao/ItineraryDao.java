@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Itinerary;
+import com.techelevator.model.Landmark;
 
 import java.util.List;
 
@@ -15,6 +16,10 @@ public interface ItineraryDao {
     void updateItinerary(int itineraryId, Itinerary itinerary);
 
     Itinerary getItineraryByItineraryId(int itineraryId);
+
+    void linkItineraryLandmark(int itineraryId, int landmarkId);
+
+    Itinerary createdItinerary(Itinerary itinerary, String username, int landmarkId);
 
 
 }

@@ -54,7 +54,7 @@ CREATE TABLE itinerary (
 CREATE TABLE itinerary_landmarks (
     itinerary_id int NOT NULL,
     landmark_id int NOT NULL,
-    itinerary_order int NOT NULL,
+    itinerary_order SERIAL,
     CONSTRAINT pk_itinerary_landmarks PRIMARY KEY (itinerary_id, landmark_id),
     CONSTRAINT fk_itinerary_landmarks_landmarks FOREIGN KEY (landmark_id) REFERENCES landmarks(landmark_id),
     CONSTRAINT fk_itinerary_landmarks_itinerary FOREIGN KEY (itinerary_id) REFERENCES itinerary(itinerary_id)

@@ -70,6 +70,26 @@ public class JdbcItineraryDao implements ItineraryDao{
     }
 
     @Override
+    public void linkItineraryLandmark(int itineraryId, int landmarkId) {
+
+        String sql = "INSERT INTO itinerary_landmarks(itinerary_id, landmark_id) VALUES(?,?)";
+
+        try{
+            jdbcTemplate.update(sql, itineraryId, landmarkId);
+        } catch(Exception ex){
+            System.out.println("Something went wrong.");
+        }
+
+    }
+
+    public Itinerary createdItinerary(Itinerary itinerary, String username, int landmarkId) {
+
+        Itinerary newItinerary = createItinerary(itinerary, username);
+        linkItineraryLandmark(newItinerary.getItineraryId(), landmarkId);
+        return newItinerary;
+    }
+
+    @Override
     public void deleteItinerary(int itineraryId) {
         String sql = "DELETE FROM itinerary\n" +
                 "WHERE itinerary_id = ?;";
@@ -81,7 +101,15 @@ public class JdbcItineraryDao implements ItineraryDao{
         String sql = "UPDATE itinerary SET name = ?, starting_point = ?, date = ?\n" +
                 "WHERE itinerary_id = ?;";
 
+
         jdbcTemplate.update(sql, itinerary.getName(), itinerary.getStartingPoint(), itinerary.getDate(), itineraryId);
+    }
+
+    public void updatedItinerary(Itinerary itinerary, String username, int landmarkId) {
+
+        updateItinerary(itinerary.getItineraryId(), itinerary);
+        linkItineraryLandmark(itinerary.getItineraryId(), landmarkId);
+
     }
 
     private Itinerary mapRowToItinerary(SqlRowSet rs) {

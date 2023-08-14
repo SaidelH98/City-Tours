@@ -38,8 +38,8 @@
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
-               <div class="button">
-                    <router-link v-bind:to="{ name: 'itinerary-form' }">
+               <div class="button" v-on:click="storeLandmarkId()">
+                    <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
                         <button>Add to Itinerary</button>
                     </router-link>
                 
@@ -66,6 +66,9 @@ import ItineraryService from '../services/ItineraryService'
 
 export default {
     name : 'rome-landmarks',
+    props: [
+        "landmarkId"
+    ],
     components:{
         LandmarkSchedule
     },
@@ -122,21 +125,11 @@ export default {
 
         },
 
-        onClick(){
-            ItineraryService.createItinerary(this.itinerary).then((response)=>{
-                const landmarkId = this.landmarkId
-                const userId = response.data.userId;
-                const route = {
-                    name: "Profile",
-                    params: {
-                        itineraryId: itineraryId,
-                        userid: userId
-                    }
-                };
-                this.$router.push(route)
-            })
-
+        storeLandmarkId(){
+            const landmarkId = this.landmarks.landmarkId;
+            return landmarkId;
         }
+
     }
 
 

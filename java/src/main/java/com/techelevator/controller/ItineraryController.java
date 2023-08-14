@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.ItineraryDao;
 import com.techelevator.model.Itinerary;
+import com.techelevator.model.Landmark;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -43,12 +44,13 @@ public class ItineraryController {
         }
     }
 
-    @PostMapping()
+    @PostMapping("/{landmarkId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createItinerary(@RequestBody Itinerary newItinerary, Principal principal){
+    public void createdItinerary(@RequestBody Itinerary newItinerary, Principal principal, Landmark landmark){
         try{
             String username = principal.getName();
-            Itinerary itinerary = itineraryDao.createItinerary(newItinerary, username);
+            Itinerary itinerary = itineraryDao.createdItinerary(newItinerary, username, landmark.getLandmarkId());
+
             if(itinerary == null){
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Itinerary failed!");
             }
