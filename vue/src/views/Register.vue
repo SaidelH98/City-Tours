@@ -86,4 +86,35 @@ label {
   flex-direction: column;
   align-items: center;
 }
+
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 25px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #474646;
+    font-size: 25px;
+}
+
+button{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 2px 0;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
 </style>

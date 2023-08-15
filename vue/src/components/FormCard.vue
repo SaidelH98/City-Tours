@@ -1,11 +1,11 @@
 <template>
   <div>
       <h1>
-          List of Landmarks In Rome
+
       </h1>
       <div>
 
-        <div>
+        <div class="form-card">
             <form v-on:submit.prevent="onCreation()">
                 <div>
                     <label>Itinerary Name:</label>
@@ -23,7 +23,7 @@
                 <!--- <button type="submit" class="button">Save Itinerary</button> --->
                 
                 <div class="button" >
-                        <input type="submit" value="Create Itinerary" />
+                        <button type="submit" value="Create Itinerary" >Create Itinerary</button>
 
                 </div>
             </form>
@@ -106,68 +106,47 @@ export default {
 
 <style scoped>
 
-    .landmarkName{
-        grid-area: name;
-        font-size: 25px;
-        text-align: center;
-    }
+.form-card{
+    display: flex;
+    align-content: center;
+}
 
-    .landmarkVenue{
-        grid-area: venue;
-        text-align: center;
-    }
+input{
+    display: block;
+    height: 50px;
+    width: 300px;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: 300;
+}
 
-    .landmarkImage{
-        grid-area: image;
-        /*width: 100%;*/
-        /*height: 100%;*/
-        /*object-fit: contain;*/
-    }
+label{
+    font-size: 20px;
+}
+::placeholder{
+    color: #474646;
+    font-size: 25px;
+}
 
-    h1{
-        text-align: center;
-    }
-
-    .landmarkSchedule {
-        grid-area: schedule;
-        text-align: center;
-        color: rgb(58, 58, 58);
-
-    }
-
-
-        
-        
-
-    .landmarkDescription{
-        grid-area: description;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-        color: rgb(58, 58, 58);
-    }
+button{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 2px 0;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
 
 
-    .landmark{
-        display: grid;
-        margin-bottom: 30px;
-        background-color: white;
-        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
-        /*height: 700px;*/
-        grid-template-columns: 
-        1fr 1fr;
-        grid-template-areas:
-        "name image"
-        "venue image"
-        "description image"
-        "schedule image";
-    }
 
-        img{
-        width: 100%;
-        height: 400px;
-        /*height: max-content;*/
-        }
 
 
     

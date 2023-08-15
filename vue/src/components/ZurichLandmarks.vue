@@ -127,6 +127,7 @@ export default {
         background-color: black;
         color: white;
         font-size: 20px;
+        cursor: pointer;
     }
 
     .landmarkDescription{
@@ -179,7 +180,7 @@ export default {
         display: flex;
         height: 200px;
         width: 1300px;
-        background-image: url("C:\Users\Student\workspace\city-tours\vue\src\assets\images\Overview\dan-freeman-bvK3lFIWIIQ-unsplash.jpg");
+        background-image: url("../assets/images/Overview/dan-freeman-bvK3lFIWIIQ-unsplash.jpg");
         background-size: 650px;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
     }

@@ -6,11 +6,10 @@
     </header>
 
     <main class="main">
-      <form-card />
-
-
-    
-
+      <div class="form-card">
+        <form-card />
+      </div>
+      
     </main>
     
   </div>
@@ -28,6 +27,18 @@ export default {
 };
 </script>
 <style scoped>
+h1{
+  text-align: center;
+}
+
+.form-card{
+  margin-left: auto;
+  margin-right: auto;
+}
+main{
+  display: flex;
+  align-items: center;
+}
 
 
 </style>

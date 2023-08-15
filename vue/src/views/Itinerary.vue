@@ -2,11 +2,17 @@
   <div class="rome">
     <header class="header">
       
-    <div class="greeting">
-      Welcome {{$store.state.user.username}}
+    <div class="profile">
+        <img class="profile-picture" src="../assets/images/profile/charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" alt="">
+        <div class="greeting">
+            Welcome {{$store.state.user.username}}!
+            
+        </div>
     </div>
+
        <h1>My Itineraries</h1>
     </header>
+   
 
 
 
@@ -101,6 +107,19 @@ export default {
   .greeting{
     margin-top: 10px;
     font-size: 25px;
+    margin-left: 10px;
+  }
+
+  img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile{
+    margin-top: 20px;
+    display: flex;
+    row-gap: 50px;
+    background-color: white;
   }
 
 
