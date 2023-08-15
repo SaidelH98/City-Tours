@@ -30,18 +30,50 @@
        </div>
 
       </div>
+      <br>
+      <br>
+      <br>
+      <h1 class="or">OR</h1>
+      <br>
+      <br>
+      <br>
+      <h2>ADD TO EXISTING ITINERARY</h2>
+      <div>
+            <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Starting Point</th>
+            <th>Date</th>
+            <th>Add</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr  v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
+                <td class="itineraryName"> {{itinerary.name}} </td>
+                <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
+                <td class="itineraryDate"> {{itinerary.date}} </td> 
+                <td class="add-to-itinerary">
+                    <button type="submit" value="Add" v-on:click="addExisting(itinerary.itineraryId)">Add</button></td> 
+                           
+            </tr>
+        </tbody>
+      </table>
+      </div>
   </div>
 </template>
 
 <script>
-import LandmarkService from "../services/LandmarkService"
+
 import ItineraryService from '../services/ItineraryService'
 
 
 export default {
     name : 'form-card',
     props:[
-        "userId"
+        "userId", "itineraryId"
+
     ],
     data() {
         return {
@@ -49,6 +81,7 @@ export default {
 
             schedules: [],
             search: "",
+            itineraries: [],
 
             itinerary: {
                 userId: this.$store.state.user.id,
@@ -57,15 +90,14 @@ export default {
                 date: "",
             }
         }
-    },
-
+    },  
     created(){
-        const cityId = this.$route.params.cityId;
-        LandmarkService.getLandmarksByCity(cityId).then((response) =>{
-            this.landmarks = response.data;
+    ItineraryService.getItinerariesByUserId(this.$store.state.user.id).then((response) =>{
 
-        })
-    },
+      this.itineraries = response.data;
+      console.log(response.data);
+    })
+  },
 
     methods:{
         onCreation(){
@@ -83,14 +115,14 @@ export default {
 
         },
 
-        onClick(){
-            ItineraryService.createItinerary(this.itinerary).then((response)=>{
-                const itineraryId = response.data.itinerary_id;
+        addExisting(itineraryId){
+            ItineraryService.addToExistingItinerary(itineraryId, this.$route.params.landmarkId).then((response)=>{
+                
                 const userId = response.data.userId;
                 const route = {
                     name: "profile",
                     params: {
-                        itineraryId: itineraryId,
+                        
                         userid: userId
                     }
                 };
@@ -145,6 +177,13 @@ button{
     align-self: center;
 }
 
+.or {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
 
 
 

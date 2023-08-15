@@ -22,7 +22,7 @@
             <th>Name</th>
             <th>Starting Point</th>
             <th>Date</th>
-            <th>Edit</th>
+            <th>View</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -32,7 +32,7 @@
                 <td class="itineraryName"> {{itinerary.name}} </td>
                 <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
                 <td class="itineraryDate"> {{itinerary.date}} </td> 
-                <td class="edit-itinerary"> Edit </td> 
+                <td class="view-itinerary"> View </td> 
                 <td class="delete-itinerary">Delete</td>             
             </tr>
         </tbody>

@@ -67,4 +67,15 @@ public class ItineraryController {
             itineraryDao.updateItinerary(itineraryId, updatedItinerary);
 
     }
+
+    @PostMapping("/my-itinerary/{itineraryId}/{landmarkId}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addToExistingItinerary(@PathVariable int itineraryId, Landmark landmark) {
+        try {
+            itineraryDao.linkItineraryLandmark(itineraryId, landmark.getLandmarkId());
+        }catch(ResponseStatusException ex) {
+            System.out.println("Something went wrong.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Itinerary failed.");
+        }
+    }
 }
