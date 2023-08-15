@@ -32,14 +32,7 @@
                 <td class="itineraryName"> {{itinerary.name}} </td>
                 <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
                 <td class="itineraryDate"> {{itinerary.date}} </td> 
-                <td class="view-itinerary"> 
-                   <router-link v-bind:to="{ name: 'view-details', params: {userId: this.$store.state.user.id, itinerayId: this.$route.params.itineraryId} }">
-                        <button class="button">view</button>
-                    </router-link>
-
-
-                </td> 
-                
+                <td class="view-itinerary"> View </td> 
                 <td class="delete-itinerary">Delete</td>             
             </tr>
         </tbody>
@@ -71,7 +64,7 @@ import ItineraryService from '../services/ItineraryService';
 export default {
   name: "itinerary",
   props:[
-    "userId", "itineraryId"
+    "userId"
   ],
   data(){
     return {
