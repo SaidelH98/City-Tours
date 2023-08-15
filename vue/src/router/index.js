@@ -13,6 +13,7 @@ import Brussels from "../views/Brussels.vue"
 import Munich from "../views/Munich.vue"
 import Itinerary from "../views/Itinerary.vue"
 import ItineraryForm from "../views/ItineraryForm.vue"
+import ViewDetails from "../views/ViewDetails.vue"
 
 Vue.use(Router)
 
@@ -99,6 +100,15 @@ const router = new Router({
       path: "/itinerary/:landmarkId",
       name: "itinerary-form",
       component: ItineraryForm,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
+    {
+      path: "/profile/:userId/:itineraryId",
+      name: "view-details",
+      component: ViewDetails,
       meta: {
         requiresAuth: true
       }
