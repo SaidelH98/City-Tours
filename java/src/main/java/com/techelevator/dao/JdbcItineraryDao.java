@@ -38,6 +38,7 @@ public class JdbcItineraryDao implements ItineraryDao{
 
     }
 
+
     @Override
     public List<Itinerary> getItinerariesByUserId(int userId) {
         List<Itinerary> itinerariesByUserId = new ArrayList<>();

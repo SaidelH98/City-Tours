@@ -10,33 +10,13 @@
         </div>
     </div>
 
-       <h1>My Itineraries</h1>
+       <h1>My Itineraries Details</h1>
     </header>
+    <div class="itinerary-name">{{ItinerarysDetails.itineraryName}}</div>
+
    
 
 
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Starting Point</th>
-            <th>Date</th>
-            <th>View</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-         
-            <tr  v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
-                <td class="itineraryName"> {{itinerary.name}} </td>
-                <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
-                <td class="itineraryDate"> {{itinerary.date}} </td> 
-                <td class="view-itinerary"> View </td> 
-                <td class="delete-itinerary">Delete</td>             
-            </tr>
-        </tbody>
-      </table>
     
 
 
@@ -68,13 +48,14 @@ export default {
   ],
   data(){
     return {
-      itineraries: [
+    
+      ItinerarysDetails:[
 
       ]
     }
   },
   created(){
-    ItineraryService.getItinerariesByUserId(this.$store.state.user.id).then((response) =>{
+    ItineraryService.getItineraryDetailsByItineraryId(this.$store.state.user.id).then((response) =>{
 
       this.itineraries = response.data;
       console.log(response.data);

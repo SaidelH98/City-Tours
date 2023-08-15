@@ -106,7 +106,7 @@ const router = new Router({
     },
 
     {
-      path: "/profile/:userId/:itineraryId",
+      path: "/profile/:itineraryId",
       name: "view-details",
       component: ViewDetails,
       meta: {

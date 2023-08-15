@@ -20,7 +20,7 @@ CREATE TABLE city (
 
 CREATE TABLE landmarks (
 	landmark_id SERIAL,
-	name varchar(50) NOT NULL UNIQUE,
+	landmark_name varchar(50) NOT NULL UNIQUE,
 	city_id INT NOT NULL,
 	country varchar(50) NOT NULL,
     venue_type varchar(200) NOT NULL,

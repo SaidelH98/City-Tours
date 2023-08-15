@@ -22,7 +22,7 @@ public class JdbcScheduleDao implements ScheduleDao {
     public List<Schedule> getAllSchedules() {
         List<Schedule> scheduleList = new ArrayList<>();
 
-        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.name\n" +
+        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.landmark_name\n" +
         "FROM schedule\n" +
         "JOIN landmarks\n" +
         "ON schedule.landmark_id = landmarks.landmark_id;";
@@ -40,7 +40,7 @@ public class JdbcScheduleDao implements ScheduleDao {
     public List<Schedule> getScheduleByLandmarkId(int landmarkId) {
         List<Schedule> scheduleByLandmarkId = new ArrayList<>();
 
-        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.name\n" +
+        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.landmark_name\n" +
                 "FROM schedule\n" +
                 "JOIN landmarks\n" +
                 "ON schedule.landmark_id = landmarks.landmark_id\n" +
@@ -65,7 +65,7 @@ public class JdbcScheduleDao implements ScheduleDao {
     public List<Schedule> getScheduleByDay(String dayOfOperation) {
         List<Schedule> scheduleByDay = new ArrayList<>();
 
-        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.name\n" +
+        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.landmark_name\n" +
                 "FROM schedule\n" +
                 "JOIN landmarks\n" +
                 "ON schedule.landmark_id = landmarks.landmark_id\n" +
@@ -90,7 +90,7 @@ public class JdbcScheduleDao implements ScheduleDao {
     public List<Schedule> getScheduleByTime(int time) {
         List<Schedule> scheduleByTime = new ArrayList<>();
 
-        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.name\n" +
+        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.landmark_name\n" +
                 "FROM schedule\n" +
                 "JOIN landmarks\n" +
                 "ON schedule.landmark_id = landmarks.landmark_id\n" +
@@ -116,7 +116,7 @@ public class JdbcScheduleDao implements ScheduleDao {
     public List<Schedule> getScheduleByLandmarkName(String name) {
         List<Schedule> scheduleByLandmarkName= new ArrayList<>();
 
-        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.name\n" +
+        String sql = "SELECT id, schedule.landmark_id, day_of_operation, open_time, close_time, landmarks.landmark_name\n" +
                 "FROM schedule\n" +
                 "JOIN landmarks\n" +
                 "ON schedule.landmark_id = landmarks.landmark_id\n" +
@@ -157,7 +157,7 @@ public class JdbcScheduleDao implements ScheduleDao {
         schedule.setDayOfOperation(rs.getString("day_of_operation"));
         schedule.setOpenTime(rs.getInt("open_time"));
         schedule.setCloseTime(rs.getInt("close_time"));
-        schedule.setName(rs.getString("name"));
+        schedule.setName(rs.getString("landmark_name"));
 
         return schedule;
     }
