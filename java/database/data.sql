@@ -116,13 +116,13 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (4, 'Saturday', '7', '18');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (5, 'Saturday', '0', '0');
 
 
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (6, 'Sunday', '9', '21');
@@ -143,22 +143,22 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (7, 'Saturday', '9', '17');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (8, 'Saturday', '0', '0');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (9, 'Saturday', '0', '0');
 
 
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (10, 'Sunday', '11', '19');
@@ -279,22 +279,22 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (23, 'Saturday', '12', '18');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (24, 'Saturday', '0', '0');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (25, 'Saturday', '0', '0');
 
 
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (26, 'Sunday', '10', '18');
@@ -322,13 +322,13 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (28, 'Saturday', '9', '17');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (29, 'Saturday', '0', '0');
 
 
 
@@ -408,22 +408,22 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (38, 'Saturday', '9', '18');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (39, 'Saturday', '0', '0');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (40, 'Saturday', '0', '0');
 
 
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (41, 'Sunday', '10', '17');
@@ -509,13 +509,13 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (50, 'Saturday', '9', '19');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (51, 'Saturday', '0', '0');
 
 
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (52, 'Sunday', '9', '18');
@@ -527,13 +527,13 @@ INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALU
 INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (52, 'Saturday', '9', '18');
 
 
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Sunday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Monday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Tuesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Wednesday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Thursday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Friday', '0', '24');
-INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Saturday', '0', '24');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Sunday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Monday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Tuesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Wednesday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Thursday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Friday', '0', '0');
+INSERT INTO schedule (landmark_id, day_of_operation, open_time, close_time) VALUES (53, 'Saturday', '0', '0');
 
 INSERT INTO itinerary (user_id, name, starting_point, date) VALUES (1, 'Rome Itinerary', 'Via Milano, 42, 00184 Roma RM, Italy', '2023-08-21');
 

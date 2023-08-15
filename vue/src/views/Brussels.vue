@@ -1,7 +1,7 @@
 <template>
   <div class="brussels">
     <header class="header">
-       <h1>WELCOME TO CITY TOURS</h1>
+       <h1>WELCOME TO BRUSSELS</h1>
     </header>
 
     <main class="main">

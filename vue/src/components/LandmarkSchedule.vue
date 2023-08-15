@@ -7,8 +7,8 @@
         <div v-for="schedule in schedules" v-bind:key="schedule.landmarkId">
             <div class="schedule">
                 <span class="scheduleDay"> {{schedule.dayOfOperation}} </span>
-                <span class="scheduleOpenTime"> {{schedule.openTime}}:00 AM - </span>
-                <span class="scheduleCloseTime"> {{schedule.closeTime > 12? schedule.closeTime - 12: schedule.closeTime}}:00 PM</span>
+                <span class="scheduleOpenTime"> {{schedule.openTime === 0 ? 24 +' hours ' : schedule.openTime + ':00 AM'}}</span>
+                <span class="scheduleCloseTime"> {{schedule.closeTime > 12? schedule.closeTime - 12 + ':00 PM': schedule.closeTime === 0 ? '': schedule.closeTime + ':00 PM'}}</span>
             </div>
         </div>
       </div>
@@ -50,8 +50,5 @@ export default {
 </script>
 <style>
 
-.schedule{
-    
-}
 
 </style>

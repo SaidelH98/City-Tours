@@ -1,25 +1,34 @@
 <template>
   <div class="rome">
     <header class="header">
+      
+    <div class="greeting">
+      Welcome {{$store.state.user.username}}
+    </div>
        <h1>My Itineraries</h1>
     </header>
 
-      <table>
+
+
+      <table class="table">
         <thead>
           <tr>
             <th>Name</th>
             <th>Starting Point</th>
             <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          <div v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
-            <tr>
+         
+            <tr  v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
                 <td class="itineraryName"> {{itinerary.name}} </td>
                 <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
-                <td class="itineraryDate"> {{itinerary.date}} </td>               
+                <td class="itineraryDate"> {{itinerary.date}} </td> 
+                <td class="edit-itinerary"> Edit </td> 
+                <td class="delete-itinerary">Delete</td>             
             </tr>
-          </div>
         </tbody>
       </table>
     
@@ -69,8 +78,32 @@ export default {
 </script>
 <style scoped>
   table{
-    border: 1px solid
+    table-layout: auto;
+    border: 1px solid black;
+    width: 100%;
   }
+
+  tbody{
+    border: 1px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  thead{
+    background-color: rgb(32, 32, 31);
+    color: white;
+  }
+
+  td{
+    text-align: center;
+  }
+
+  .greeting{
+    margin-top: 10px;
+    font-size: 25px;
+  }
+
+
 
 
 </style>

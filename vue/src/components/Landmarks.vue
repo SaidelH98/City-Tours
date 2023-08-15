@@ -21,7 +21,7 @@
 
 <script>
 import HomeService from '../services/HomeService'
-import ScheduleService from '../services/ScheduleService'
+//import ScheduleService from '../services/ScheduleService'
 
 export default {
     name : 'landmarks',
@@ -40,17 +40,18 @@ export default {
             console.log(response.data);
         })
     },
-   
+   /*
         ScheduleService.getAllSchedules().then((response) =>{
 
             this.schedules = response.data;
             console.log(response.data);
         })
     }
+    */
     
-
-
 }
+
+
 </script>
 
 <style scoped>

@@ -1,13 +1,10 @@
 <template>
   <div class="rome">
     <header class="header">
-       <h1>WELCOME TO CITY TOURS</h1>
+       <h1>WELCOME TO ROME</h1>
     </header>
 
     <main class="main">
-      <router-link v-bind:to="{ name: 'my-itinerary' }"  v-if="$store.state.token != ''">Create Itinerary</router-link>
-
-     
         <rome-landmarks />
     
 

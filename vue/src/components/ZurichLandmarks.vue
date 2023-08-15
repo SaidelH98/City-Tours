@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>
-          List of Landmarks In Zurich
+          Landmarks In Zurich
       </h1>
       <div>
 
@@ -9,11 +9,18 @@
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
+               <div class="button" >
+                    <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
+                        <button>Add to Itinerary</button>
+                    </router-link>
+                
+                </div>
                 <div class="landmarkName"> {{landmark.name}} </div>
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
                 <div class="landmarkDescription"> {{landmark.description}} </div>
                 <div class="landmarkSchedule"> <landmark-schedule v-bind:landmarkId="landmark.landmarkId"/> </div>
+                
             </div>
         </div>
 
@@ -23,24 +30,30 @@
 
 <script>
 import LandmarkService from "../services/LandmarkService"
-
 import LandmarkSchedule from './LandmarkSchedule'
 
 
 export default {
-    name : 'zurich-landmarks',
+    name : 'rome-landmarks',
+    props: [
+        "landmarkId"
+    ],
     components:{
         LandmarkSchedule
     },
     data() {
         return {
-            landmarks: [
-            ],
+            landmarks: [],
 
-            schedules: [
+            schedules: [],
+            search: "",
 
-            ],
-            search: ""
+            itinerary: {
+                userId: this.$store.state.user.id,
+                name: "",
+                startingPoint: "",
+                date: "",
+            }
         }
     },
 
@@ -48,6 +61,7 @@ export default {
         const cityId = this.$route.params.cityId;
         LandmarkService.getLandmarksByCity(cityId).then((response) =>{
             this.landmarks = response.data;
+
         })
     },
     computed: {
@@ -59,10 +73,8 @@ export default {
                 ||
                 landmark.description.toLowerCase().includes(this.search.toLowerCase())
             })
-        },
-
-    }
-    
+        }
+    },
 
 
 }

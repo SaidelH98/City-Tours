@@ -3,18 +3,18 @@
     <div class="navbar">
     </div>
     <div id="nav" >
-      <span class="home">
-        <router-link v-bind:to="{ name: 'home' }">Home</router-link>
+      <span class="home" id="home-text">
+        <router-link v-bind:to="{ name: 'home' }"><h1>Home</h1></router-link>
       </span>
 
-      <span class="itinerary">
-        <router-link v-bind:to="{ name: 'profile', params: {userId: this.$store.state.user.id} }"  v-if="$store.state.token != ''">Profile</router-link>
+      <span class="profile">
+        <router-link v-bind:to="{ name: 'profile', params: {userId: this.$store.state.user.id} }"  v-if="$store.state.token != ''"><h1>Profile</h1></router-link>
 
       </span>
 
       <span class="login">
-        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == '' "> Login</router-link>
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == '' "><h1> Login</h1></router-link>
+        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><h1>Logout</h1></router-link>
       </span>
     </div>
     <router-view />
@@ -35,11 +35,15 @@ export default {
 
 #nav{
   background-color: rgb(41, 40, 40);
-  height: 60px;
+  height: 80px;
   font-size: 30px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .nav-text{
@@ -56,15 +60,30 @@ a{
   color: white;
 }
 
-
-.home{
-  margin-top: 10px;
-  margin-left: 40px;
+.profile{
+  align-self: center;
 }
 
+
+.home{
+  margin-left: 80px;
+}
+
+h1:hover{
+  background-color: white;
+  color: black;
+}
+
+
 .login{
-  margin: 10px;
-  margin-right: 40px;
+  align-self: center;
+  margin-right: 80px;
+}
+
+.logout{
+  align-self: center;
+  margin-right: 80px;
+    
 }
 
 </style>
