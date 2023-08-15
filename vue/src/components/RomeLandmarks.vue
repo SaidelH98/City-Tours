@@ -125,7 +125,11 @@ export default {
     }
 
     .button{
-        height: 50px
+        height: 100px;
+        width: 200px;
+        background-color: black;
+        color: white;
+        font-size: 20px;
     }
 
     .landmarkDescription{

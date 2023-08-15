@@ -1,25 +1,31 @@
 <template>
   <div>
-      <h1>
-          Landmarks In Brussels
-      </h1>
-      <div>
 
-        <input type="text" v-model="search" placeholder="Search Landmark" />
+      <div>
+          <div class="search-block">
+              <input class="search-bar" type="text" v-model="search" placeholder="Search Landmark" />
+          </div>
+          <br>
+          <br>
+         <h1>
+          Landmarks In Brussels
+         </h1>
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
-               <div class="button" >
+                <div class="add-landmark" >
                     <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
-                        <button>Add to Itinerary</button>
+                        <button class="button">Add to Itinerary</button>
                     </router-link>
-                
                 </div>
                 <div class="landmarkName"> {{landmark.name}} </div>
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
                 <div class="landmarkDescription"> {{landmark.description}} </div>
-                <div class="landmarkSchedule"> <landmark-schedule v-bind:landmarkId="landmark.landmarkId"/> </div>
+                <div class="landmarkSchedule"> <landmark-schedule v-bind:landmarkId="landmark.landmarkId"/> 
+        
+                
+                </div>
                 
             </div>
         </div>
@@ -111,9 +117,20 @@ export default {
 
     }
 
+    .add-landmark{
+        grid-area: add-landmark;
+        display: flex;
+        align-content: flex-end;
 
-        
-        
+    }
+
+    .button{
+        height: 100px;
+        width: 200px;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+    }
 
     .landmarkDescription{
         grid-area: description;
@@ -126,24 +143,49 @@ export default {
 
     .landmark{
         display: grid;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         background-color: white;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        height: 500px;
         /*height: 700px;*/
         grid-template-columns: 
         1fr 1fr;
         grid-template-areas:
+        "add-landmark image"
         "name image"
         "venue image"
         "description image"
-        "schedule image";
+        "schedule image"
+        ;
     }
 
         img{
         width: 100%;
-        height: 400px;
+        height: 100%;
+        padding-bottom: 0px;
         /*height: max-content;*/
-        }
+    }
+
+    .search-bar{
+        width: 800px;
+        height: 50px;
+        font-size: 30px;
+        align-self: center;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    .search-block{
+        text-align: center;
+        justify-self: center;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+        height: 200px;
+        width: 1300px;
+        background-image: url("C:\Users\Student\workspace\city-tours\vue\src\assets\images\Overview\dan-freeman-bvK3lFIWIIQ-unsplash.jpg");
+        background-size: 650px;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    }
 
 
     

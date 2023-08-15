@@ -5,8 +5,6 @@
     </header>
 
     <main class="main">
-
-     
         <zurich-landmarks />
     
 

@@ -4,13 +4,26 @@
           Schedule
       </h1>
       <div>
-        <div v-for="schedule in schedules" v-bind:key="schedule.landmarkId">
-            <div class="schedule">
-                <span class="scheduleDay"> {{schedule.dayOfOperation}} </span>
-                <span class="scheduleOpenTime"> {{schedule.openTime === 0 ? 24 +' hours ' : schedule.openTime + ':00 AM'}}</span>
-                <span class="scheduleCloseTime"> {{schedule.closeTime > 12? schedule.closeTime - 12 + ':00 PM': schedule.closeTime === 0 ? '': schedule.closeTime + ':00 PM'}}</span>
-            </div>
-        </div>
+                
+     <table class="table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Open</th>
+            <th>Close</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        <tr v-for="schedule in schedules" v-bind:key="schedule.landmarkId">
+            
+                <td class="scheduleDay"> {{schedule.dayOfOperation}} </td>
+                <td class="scheduleOpenTime"> {{schedule.openTime === 0 ? 24 +' hours ' : schedule.openTime + ':00 AM'}}</td>
+                <td class="scheduleCloseTime"> {{ schedule.closeTime === 24 ? '': schedule.closeTime > 12? schedule.closeTime - 12 + ':00 PM' : schedule.closeTime + ':00 PM'}}</td>
+          
+        </tr>
+        </tbody>
+      </table>
       </div>
   </div>
 </template>
@@ -49,6 +62,25 @@ export default {
 }
 </script>
 <style>
+
+  table{
+    table-layout: auto;
+    width: 100%;
+  }
+
+  tbody{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  thead{
+    background-color: rgb(32, 32, 31);
+    color: white;
+  }
+
+  td{
+    text-align: center;
+  }
 
 
 </style>
