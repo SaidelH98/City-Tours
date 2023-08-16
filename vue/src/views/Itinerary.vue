@@ -36,7 +36,7 @@
                 <td class="add-Landmark">          
                   <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
                 </td> 
-                <td class="delete-itinerary"> <button type="submit" value="View" v-on:click="deleteItinerary(itinerary.itineraryId)">Delete</button></td>             
+                <td class="delete-itinerary"> <button type="submit" value="Delete" v-on:click="deleteItinerary(itinerary.itineraryId)">Delete</button></td>             
             </tr>
         </tbody>
       </table>

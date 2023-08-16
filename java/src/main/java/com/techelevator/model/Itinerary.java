@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Itinerary {
@@ -7,9 +10,10 @@ public class Itinerary {
     private Integer userId;
     private String name;
     private String startingPoint;
-    private Date date;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate date;
 
-    public Itinerary(int itineraryId, int userId, String name, String startingPoint, Date date) {
+    public Itinerary(int itineraryId, int userId, String name, String startingPoint, LocalDate date) {
         this.itineraryId = itineraryId;
         this.userId = userId;
         this.name = name;
@@ -53,11 +57,11 @@ public class Itinerary {
         this.startingPoint = startingPoint;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

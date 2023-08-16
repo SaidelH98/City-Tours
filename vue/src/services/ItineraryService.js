@@ -61,6 +61,14 @@ export default {
 
   deleteItineraryById(itineraryId){
     return axios.delete('itinerary/' + itineraryId)
+  },
+
+  deleteLandMarkFromItinerary(itineraryId, landmarkId) {
+    return axios.delete(`itinerary/${itineraryId}/landmark/${landmarkId}`)
+  },
+
+  updateItinerary(itinerary) {
+    return axios.put('itinerary/' + itinerary.itineraryId, itinerary)
   }
 
 

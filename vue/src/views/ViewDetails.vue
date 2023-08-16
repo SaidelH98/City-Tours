@@ -15,11 +15,11 @@
 
     <div class="itinerary-details-header">
          <div class="itinerary-name-one">
-             <div class="itinerary-details-header-data">Itinerary: </div> 
+             <div class="itinerary-details-header-data">Itinerary Name: </div> 
              <div class="itinerary-details-header-data-result">{{ItinerarysDetails[0].itineraryName}}</div>
          </div>
         <div class="itinerary-name-one">
-            <div class="itinerary-details-header-data">Starting Pointt:</div> 
+            <div class="itinerary-details-header-data">Starting Point:</div> 
             <div class="itinerary-details-header-data-result">{{ItinerarysDetails[0].startingPoint}}</div>
         </div>
         <div class="itinerary-name-one">
@@ -54,7 +54,7 @@
                 <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
                 </td> 
                 <td class="delete-landmark">
-                  <router-link v-bind:to="{ name: 'remove-landmarks' }"> Remove</router-link>
+                  <button type="submit" value="delete" v-on:click="deleteLandMarkFromItinerary(itinerary.itineraryId, itinerary.landmarkId)">Remove</button>
                 </td>             
             </tr>
         </tbody>
@@ -67,11 +67,47 @@
     
 
     <main class="main">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div>
+        <button type="submit" value="Edit Itinerary Information">Edit Itinerary Information</button>
+        
+      </div>
+       <div>
+
+        <div class="form-card">
+            <form v-on:submit.prevent="updateItinerary(itinerary)">
+                <div>
+                    <label>Itinerary Name:</label>
+                    <input type="text" v-model="itinerary.name" required />
+                </div>
+                <div>
+                    <label>Starting Point:</label>
+                    <input type="text" v-model="itinerary.startingPoint" required/>
+                </div>
+                <div>
+                    <label>Itinerary Date</label>
+                    <input type="date" v-model="itinerary.date" required/>
+                </div>
+                
+                <!--- <button type="submit" class="button">Save Itinerary</button> --->
+                
+                <div class="button" >
+                        <button type="submit" value="Update Itinerary">Update Itinerary</button>
+
+                </div>
+            </form>
+       </div>
+
+      </div>
 
      
     
 
     </main>
+      
 
  
 
@@ -87,14 +123,21 @@ import ItineraryService from '../services/ItineraryService';
 
 export default {
   name: "itinerary",
-  props:["userId"
+  props:["userId", "itineraryId"
   ],
   data(){
     return {
     
       ItinerarysDetails:[
 
-      ]
+      ],
+
+         itinerary: {
+                userId: this.$store.state.user.id,
+                name: "",
+                startingPoint: "",
+                date: "",
+            }
     }
   },
   created(){
@@ -103,6 +146,44 @@ export default {
       this.ItinerarysDetails = response.data;
       console.log(response.data);
     })
+    ItineraryService.getItineraryByItineraryId(itineraryId).then((response) => {
+
+      this.itinerary = response.data;
+    })
+
+  },
+  methods: {
+    deleteLandMarkFromItinerary(itineraryId, landmarkId){
+      ItineraryService.deleteLandMarkFromItinerary(itineraryId, landmarkId).then((response) =>{
+
+              const userId = response.data.userId;
+                const route = {
+                    name: "profile",
+                    params: {
+                        
+                        userid: userId
+                    }
+                };
+                this.$router.push(route)
+
+      })
+    },
+    updateItinerary(itinerary) {
+      console.log(itinerary);
+      ItineraryService.updateItinerary(itinerary).then((response) => {
+
+        const userId = response.data.userId;
+                const route = {
+                    name: "profile",
+                    params: {
+                        
+                        userid: userId
+                    }
+                };
+                this.$router.push(route)
+
+      })
+    }
   }
 };
 </script>
@@ -154,6 +235,50 @@ export default {
       font-weight: bold;
   }
 
+  .form-card{
+    display: flex;
+    align-items: center;
+    
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+form{
+    align-content: center;
+    
+}
+
+label{
+    font-size: 20px;
+}
+::placeholder{
+    color: #474646;
+    font-size: 25px;
+}
+
+
+.or {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+.form-body{
+    display: flex;
+    flex-direction: column;
+ 
+}
 
 
 

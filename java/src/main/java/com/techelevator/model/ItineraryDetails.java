@@ -5,6 +5,7 @@ import java.util.Date;
 public class ItineraryDetails {
     private int itineraryId;
     private int userId;
+    private int landmarkId;
     private String itineraryName;
     private String startingPoint;
     private Date date;
@@ -17,15 +18,16 @@ public class ItineraryDetails {
     public ItineraryDetails() {
     }
 
-    public ItineraryDetails(int itineraryId, int userId, String itineraryName, String startingPoint, Date date, String landmarkName, String country, String city_name, String venueType, String address) {
+    public ItineraryDetails(int itineraryId, int userId, int landmarkId, String itineraryName, String startingPoint, Date date, String landmarkName, String country, String cityName, String venueType, String address) {
         this.itineraryId = itineraryId;
         this.userId = userId;
+        this.landmarkId = landmarkId;
         this.itineraryName = itineraryName;
         this.startingPoint = startingPoint;
         this.date = date;
         LandmarkName = landmarkName;
         this.country = country;
-        this.cityName = city_name;
+        this.cityName = cityName;
         this.venueType = venueType;
         this.address = address;
     }
@@ -110,11 +112,20 @@ public class ItineraryDetails {
         this.address = address;
     }
 
+    public int getLandmarkId() {
+        return landmarkId;
+    }
+
+    public void setLandmarkId(int landmarkId) {
+        this.landmarkId = landmarkId;
+    }
+
     @Override
     public String toString() {
         return "ItineraryDetails{" +
                 "itineraryId=" + itineraryId +
                 ", userId=" + userId +
+                ", landmarkId=" + landmarkId +
                 ", itineraryName='" + itineraryName + '\'' +
                 ", startingPoint='" + startingPoint + '\'' +
                 ", date=" + date +

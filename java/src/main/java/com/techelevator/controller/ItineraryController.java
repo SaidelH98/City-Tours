@@ -22,7 +22,7 @@ public class ItineraryController {
         this.itineraryDao = itineraryDao;
     }
 
-    @GetMapping("/{itineraryId}")
+    @GetMapping("/id/{itineraryId}")
     public Itinerary getItineraryByItineraryId(@PathVariable int itineraryId){
         Itinerary itinerary = itineraryDao.getItineraryByItineraryId(itineraryId);
 

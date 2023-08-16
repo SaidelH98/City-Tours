@@ -21,7 +21,7 @@ public class JdbcItineraryDetailsDao implements ItineraryDetailsDao{
     @Override
     public List<ItineraryDetails> getItineraryDetailsByItineraryId(int itineraryId) {
         List<ItineraryDetails> itinerariesByUserId = new ArrayList<>();
-        String sql = "SELECT itinerary.itinerary_id, itinerary.user_id, itinerary.name,itinerary.starting_point, itinerary.date, landmarks.landmark_name, landmarks.country, city.city_name, landmarks.venue_type, landmarks.address\n" +
+        String sql = "SELECT itinerary.itinerary_id, itinerary.user_id, itinerary.name,itinerary.starting_point, itinerary.date, landmarks.landmark_id, landmarks.landmark_name, landmarks.country, city.city_name, landmarks.venue_type, landmarks.address\n" +
                 "FROM itinerary\n" +
                 "JOIN itinerary_landmarks\n" +
                 "ON itinerary_landmarks.itinerary_id = itinerary.itinerary_id\n" +
@@ -45,6 +45,7 @@ public class JdbcItineraryDetailsDao implements ItineraryDetailsDao{
 
         itineraryDetails.setItineraryId(rs.getInt("itinerary_id"));
         itineraryDetails.setUserId(rs.getInt("user_id"));
+        itineraryDetails.setLandmarkId(rs.getInt("landmark_id"));
         itineraryDetails.setItineraryName(rs.getString("name"));
         itineraryDetails.setStartingPoint(rs.getString("starting_point"));
         itineraryDetails.setDate(rs.getDate("date"));
