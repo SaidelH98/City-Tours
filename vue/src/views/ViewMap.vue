@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div class="view-map"> 
 
-      {{landmarks.map}}
+      <h3>Click on map for directions</h3>
 
-       <div class="landmark-map"> <iframe v-bind:src=landmarks.map alt=""/>  </div>
+       <iframe v-bind:src="landmarks.map"> </iframe>
 
-      
 
   </div>
 </template>
@@ -34,5 +33,17 @@ export default {
 </script>
 
 <style>
+.view-map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe{
+ 
+    width: 80%;
+    height: 500px;
+    align-self: center;
+}
 
 </style>
