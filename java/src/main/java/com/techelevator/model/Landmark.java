@@ -9,8 +9,9 @@ public class Landmark {
     private String image;
     private String description;
     private String address;
+    private String map;
 
-    public Landmark(int landmarkId, String name, String venueType, int cityId, String country, String image, String description, String address) {
+    public Landmark(int landmarkId, String name, String venueType, int cityId, String country, String image, String description, String address, String map) {
         this.landmarkId = landmarkId;
         this.name = name;
         this.venueType = venueType;
@@ -19,6 +20,7 @@ public class Landmark {
         this.image = image;
         this.description = description;
         this.address = address;
+        this.map = map;
     }
 
     public Landmark() {
@@ -89,17 +91,26 @@ public class Landmark {
         this.address = address;
     }
 
+    public String getMap() {
+        return map;
+    }
+
+    public void setMap(String map) {
+        this.map = map;
+    }
+
     @Override
     public String toString() {
         return "Landmark{" +
                 "landmarkId=" + landmarkId +
                 ", name='" + name + '\'' +
                 ", venueType='" + venueType + '\'' +
-                ", cityId='" + cityId + '\'' +
+                ", cityId=" + cityId +
                 ", country='" + country + '\'' +
                 ", image='" + image + '\'' +
                 ", description='" + description + '\'' +
                 ", address='" + address + '\'' +
+                ", map='" + map + '\'' +
                 '}';
     }
 }

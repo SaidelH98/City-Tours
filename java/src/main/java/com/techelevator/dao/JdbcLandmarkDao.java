@@ -24,7 +24,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
     public List<Landmark> listAllLandmarks() {
         List<Landmark> landmarkList = new ArrayList<>();
 
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks;";
 
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
@@ -40,7 +40,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
     public List<Landmark> getLandmarksByName(String name) {
         List<Landmark> landmarkNames = new ArrayList<>();
 
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks WHERE name ILIKE ?";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql, "%" + name + "%");
@@ -62,7 +62,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
 
         List<Landmark> landmarkByCity = new ArrayList<>();
 
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks WHERE city_id = ?;";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql, cityId);
@@ -84,7 +84,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
 
         List<Landmark> landmarkByCountry = new ArrayList<>();
 
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks WHERE country = ?;";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql, country);
@@ -105,7 +105,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
     public List<Landmark> getLandmarkByVenueType(String venueType) {
         List<Landmark> landmarkVenues= new ArrayList<>();
 
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks WHERE venue_type = ?;";
         try {
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql, venueType);
@@ -124,7 +124,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
 
     @Override
     public Landmark getLandmarkById(int landmarkId) {
-        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                  "FROM landmarks WHERE landmark_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, landmarkId);
         if (result.next()) {
@@ -154,7 +154,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
     public List<Landmark> getLandmarksByItineraryId(int itineraryId){
         List<Landmark> landmarkListByItinerary = new ArrayList<>();
 
-        String sql = "SELECT landmarks.landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+        String sql = "SELECT landmarks.landmark_id, landmark_name, venue_type, city_id, country, address, image, description, map\n" +
                 "FROM landmarks\n" +
                 "JOIN itinerary_landmarks\n" +
                 "ON itinerary_landmarks.landmark_id = landmarks.landmark_id\n" +
@@ -186,6 +186,7 @@ public class JdbcLandmarkDao implements LandmarkDao{
         landmark.setAddress(rs.getString("address"));
         landmark.setImage(rs.getString("image"));
         landmark.setDescription(rs.getString("description"));
+        landmark.setMap(rs.getString("map"));
 
         return landmark;
     }

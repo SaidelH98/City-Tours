@@ -27,6 +27,7 @@ CREATE TABLE landmarks (
 	image varchar(500) NOT NULL,
 	description varchar(2000) NOT NULL,
 	address varchar(500) NOT NULL,
+	map varchar(2000) NOT NULL,
 	CONSTRAINT fk_city FOREIGN KEY(city_id) REFERENCES city(city_id),
 	CONSTRAINT PK_landmark PRIMARY KEY (landmark_id )
 );
