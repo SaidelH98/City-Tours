@@ -61,6 +61,15 @@ CREATE TABLE itinerary_landmarks (
     CONSTRAINT fk_itinerary_landmarks_itinerary FOREIGN KEY (itinerary_id) REFERENCES itinerary(itinerary_id)
 );
 
+CREATE TABLE rating (
+    user_id int NOT NULL,
+    landmark_id int NOT NULL,
+    thumbs_up BOOLEAN,
+    CONSTRAINT pk_rating PRIMARY KEY (user_id, landmark_id),
+    CONSTRAINT fk_rating_landmarks FOREIGN KEY (landmark_id) REFERENCES landmarks(landmark_id),
+    CONSTRAINT fk_rating_users FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
 
 
 COMMIT TRANSACTION;
