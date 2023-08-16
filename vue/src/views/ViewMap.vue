@@ -42,7 +42,7 @@ export default {
 iframe{
  
     width: 80%;
-    height: 500px;
+    height: 600px;
     align-self: center;
 }
 

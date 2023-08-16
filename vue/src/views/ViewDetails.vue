@@ -40,7 +40,6 @@
                 <th>Country</th>
                 <th>Address</th>
                 <th>Go to Landmark</th>
-                <th>Add</th>
                 <th>Remove Landmark</th>
           </tr>
         </thead>
@@ -54,15 +53,19 @@
                 <td class="landmark-map">
                   <button type="submit" value="view-map" v-on:click="onClick(itinerary.landmarkId)">View Map</button>
                   </td>
-                <td class="add-Landmark">          
-                <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
-                </td> 
                 <td class="delete-landmark">
                   <button type="submit" value="delete" v-on:click="deleteLandMarkFromItinerary(itinerary.itineraryId, itinerary.landmarkId)">Remove</button>
                 </td>             
             </tr>
         </tbody>
       </table>
+
+      <br><br><br><br>
+
+  <div class="add-new-landmark">
+    <button><router-link v-bind:to="{ name: 'home' }" > Add New Landmark to Itinerary</router-link></button>
+
+  </div>
 
 
     

@@ -90,9 +90,9 @@ export default {
 
     },
     deleteItinerary(itineraryId){
-      ItineraryService.deleteItineraryById(itineraryId).then((response)=>{
+      ItineraryService.deleteItineraryById(itineraryId).then(()=>{
 
-                const userId = response.data.userId;
+  /*              const userId = response.data.userId;
                 const route = {
                     name: "profile",
                     params: {
@@ -101,7 +101,10 @@ export default {
                     }
                 };
                 this.$router.push(route)
+*/
 
+            const index = this.itineraries.findIndex(i => i.itineraryId == itineraryId)
+            this.itineraries.splice(index, 1)
       })
 
     }
