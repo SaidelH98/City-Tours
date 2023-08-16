@@ -5,29 +5,29 @@ import java.util.Date;
 public class ItineraryDetails {
     private int itineraryId;
     private int userId;
-    private String ItineraryName;
+    private String itineraryName;
     private String startingPoint;
     private Date date;
     private String LandmarkName;
     private String country;
-    private String city_name;
+    private String cityName;
     private String venueType;
     private String address;
+
+    public ItineraryDetails() {
+    }
 
     public ItineraryDetails(int itineraryId, int userId, String itineraryName, String startingPoint, Date date, String landmarkName, String country, String city_name, String venueType, String address) {
         this.itineraryId = itineraryId;
         this.userId = userId;
-        ItineraryName = itineraryName;
+        this.itineraryName = itineraryName;
         this.startingPoint = startingPoint;
         this.date = date;
         LandmarkName = landmarkName;
         this.country = country;
-        this.city_name = city_name;
+        this.cityName = city_name;
         this.venueType = venueType;
         this.address = address;
-    }
-
-    public ItineraryDetails() {
     }
 
     public int getItineraryId() {
@@ -47,11 +47,11 @@ public class ItineraryDetails {
     }
 
     public String getItineraryName() {
-        return ItineraryName;
+        return itineraryName;
     }
 
     public void setItineraryName(String itineraryName) {
-        ItineraryName = itineraryName;
+        this.itineraryName = itineraryName;
     }
 
     public String getStartingPoint() {
@@ -86,12 +86,12 @@ public class ItineraryDetails {
         this.country = country;
     }
 
-    public String getCity_name() {
-        return city_name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public void setCityName(String city_name) {
+        this.cityName = city_name;
     }
 
     public String getVenueType() {
@@ -115,12 +115,12 @@ public class ItineraryDetails {
         return "ItineraryDetails{" +
                 "itineraryId=" + itineraryId +
                 ", userId=" + userId +
-                ", ItineraryName='" + ItineraryName + '\'' +
+                ", itineraryName='" + itineraryName + '\'' +
                 ", startingPoint='" + startingPoint + '\'' +
                 ", date=" + date +
                 ", LandmarkName='" + LandmarkName + '\'' +
                 ", country='" + country + '\'' +
-                ", city_name='" + city_name + '\'' +
+                ", cityName='" + cityName + '\'' +
                 ", venueType='" + venueType + '\'' +
                 ", address='" + address + '\'' +
                 '}';

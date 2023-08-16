@@ -186,6 +186,7 @@ export default {
 
 .city-description{
   text-decoration: none;
+  color: rgb(58, 58, 58)
 }
 img{
         width: 100%;

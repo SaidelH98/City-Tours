@@ -23,6 +23,7 @@
             <th>Starting Point</th>
             <th>Date</th>
             <th>View</th>
+            <th>Add</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -33,7 +34,9 @@
                 <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
                 <td class="itineraryDate"> {{itinerary.date}} </td> 
                 <td class="view-itinerary"><button type="submit" value="View" v-on:click="onClick(itinerary.itineraryId)">View</button></td> 
-                
+                <td class="add-Landmark">          
+                  <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
+                </td> 
                 <td class="delete-itinerary">Delete</td>             
             </tr>
         </tbody>
@@ -86,17 +89,16 @@ export default {
   },
   methods:{
     onClick(itineraryId){
-        console.log(this.itineraryId);
-        ItineraryService.getItineraryDetailsByItineraryId(itineraryId).then((response)=>{
-            const ItineraryId = response.data.itineraryId;
+        console.log(itineraryId);
+       // ItineraryService.getItineraryDetailsByItineraryId(itineraryId).then(()=>{
             const route = {
                 name: "view-details",
                 params: {
-                    ItineraryId: ItineraryId
+                    itineraryId: itineraryId
                 }
             };
             this.$router.push(route)
-        })
+       // })
 
     },
 

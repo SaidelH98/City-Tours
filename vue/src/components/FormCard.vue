@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-body">
       <h1>
 
       </h1>
@@ -140,19 +140,23 @@ export default {
 
 .form-card{
     display: flex;
-    align-content: center;
+    align-items: center;
 }
 
 input{
     display: block;
     height: 50px;
-    width: 300px;
-    background-color: rgba(255,255,255,0.07);
+    width: 800px;
+    background-color: rgba(100, 98, 98, 0.07);
     border-radius: 3px;
     padding: 0 10px;
     margin-bottom: 8px;
     font-size: 25px;
     font-weight: 300;
+}
+
+form{
+    align-content: center;
 }
 
 label{
@@ -183,6 +187,10 @@ button{
 
 h2 {
     text-align: center;
+}
+.form-body{
+    display: flex;
+    flex-direction: column;
 }
 
 

@@ -50,7 +50,7 @@ public class JdbcItineraryDetailsDao implements ItineraryDetailsDao{
         itineraryDetails.setDate(rs.getDate("date"));
         itineraryDetails.setLandmarkName(rs.getString("landmark_name"));
         itineraryDetails.setCountry(rs.getString("country"));
-        itineraryDetails.setCity_name(rs.getString("city_name"));
+        itineraryDetails.setCityName(rs.getString("city_name"));
         itineraryDetails.setVenueType(rs.getString("venue_type"));
         itineraryDetails.setAddress(rs.getString("address"));
 
