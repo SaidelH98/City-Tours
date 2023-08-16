@@ -10,7 +10,7 @@
         </div>
     </div>
 
-       <h1>Itineraries Details</h1>
+       <h1>{{$store.state.user.username}}'s Itinerary Details</h1>
     </header>
 
     <div class="itinerary-details-header">
@@ -40,7 +40,7 @@
                 <th>Country</th>
                 <th>Address</th>
                 <th>Add</th>
-                <th>Remove</th>
+                <th>Remove Landmark</th>
           </tr>
         </thead>
         <tbody>
@@ -53,7 +53,9 @@
                 <td class="add-Landmark">          
                 <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
                 </td> 
-                <td class="delete-landmark">Remove</td>             
+                <td class="delete-landmark">
+                  <router-link v-bind:to="{ name: 'remove-landmarks' }"> Remove</router-link>
+                </td>             
             </tr>
         </tbody>
       </table>

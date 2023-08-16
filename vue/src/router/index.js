@@ -14,6 +14,9 @@ import Munich from "../views/Munich.vue"
 import Itinerary from "../views/Itinerary.vue"
 import ItineraryForm from "../views/ItineraryForm.vue"
 import ViewDetails from "../views/ViewDetails.vue"
+import RemoveLandmarks from "../views/RemoveLandmarks.vue"
+
+
 
 Vue.use(Router)
 
@@ -109,6 +112,15 @@ const router = new Router({
       path: "/profile/itinerary/:itineraryId",
       name: "view-details",
       component: ViewDetails,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
+    {
+      path: "/profile/remove-landmark",
+      name: "remove-landmarks",
+      component: RemoveLandmarks,
       meta: {
         requiresAuth: true
       }

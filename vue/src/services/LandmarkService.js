@@ -38,4 +38,8 @@ export default {
     return http.get('landmarks/venue/')
   },
 
+  getLandmarksByItineraryId(itineraryId) {
+    return http.get('landmarks/itinerary/' + itineraryId)
+  },
+
 }

@@ -151,6 +151,28 @@ public class JdbcLandmarkDao implements LandmarkDao{
         return venueTypeList;
     }
 
+    public List<Landmark> getLandmarksByItineraryId(int itineraryId){
+        List<Landmark> landmarkListByItinerary = new ArrayList<>();
+
+        String sql = "SELECT landmarks.landmark_id, landmark_name, venue_type, city_id, country, address, image, description\n" +
+                "FROM landmarks\n" +
+                "JOIN itinerary_landmarks\n" +
+                "ON itinerary_landmarks.landmark_id = landmarks.landmark_id\n" +
+                "WHERE itinerary_id = ?";
+        try {
+            SqlRowSet result = jdbcTemplate.queryForRowSet(sql, itineraryId);
+
+            while (result.next()) {
+                Landmark landmark = mapRowToLandmark(result);
+                landmarkListByItinerary.add(landmark);
+            }
+        }catch (Exception ex){
+            System.out.println("Something went wrong");
+        }
+
+        return landmarkListByItinerary;
+    }
+
 
 
     private Landmark mapRowToLandmark(SqlRowSet rs) {

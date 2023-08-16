@@ -22,9 +22,9 @@
             <th>Name</th>
             <th>Starting Point</th>
             <th>Date</th>
-            <th>View</th>
-            <th>Add</th>
-            <th>Delete</th>
+            <th>View Details</th>
+            <th>Add New Landmark</th>
+            <th>Delete Itinerary</th>
           </tr>
         </thead>
         <tbody>

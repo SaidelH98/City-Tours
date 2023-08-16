@@ -102,5 +102,17 @@ public class LandmarkController {
         }
     }
 
+    @GetMapping("/itinerary/{itineraryId}")
+    public List<Landmark> getLandmarksByItineraryId(@PathVariable int itineraryId){
+        List<Landmark> landmarksByItinerary = landmarkDao.getLandmarksByItineraryId(itineraryId);
+
+        if (landmarksByItinerary == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No landmark found");
+
+        }else{
+            return landmarksByItinerary;
+        }
+    }
+
 
 }
