@@ -52,7 +52,7 @@
                 <td class="itinerary-country"> {{itinerary.country}} </td>
                 <td class="itinerary-address"> {{itinerary.address}} </td> 
                 <td class="landmark-map">
-                  <router-link v-bind:to="{ name: 'view-map', params:{landmarkId} }" > View Map</router-link>
+                  <button type="submit" value="view-map" v-on:click="onClick(itinerary.landmarkId)">View Map</button>
                   </td>
                 <td class="add-Landmark">          
                 <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
@@ -122,6 +122,8 @@
 
 <script>
 import ItineraryService from '../services/ItineraryService';
+//import LandmarkService from '../services/LandmarkService';
+
 
 
 
@@ -135,6 +137,10 @@ export default {
       ItinerarysDetails:[
 
       ],
+
+      landmarks: [],
+
+
 
          itinerary: {
                 userId: this.$store.state.user.id,
@@ -155,6 +161,7 @@ export default {
       this.itinerary = response.data;
     })
 
+
   },
   methods: {
     deleteLandMarkFromItinerary(itineraryId, landmarkId){
@@ -168,7 +175,7 @@ export default {
                         userid: userId
                     }
                 };
-                this.$router.push(route)
+                this.$route.push(route)
 
       })
     },
@@ -188,6 +195,24 @@ export default {
 
       })
     },
+    onClick(landmarkId){
+      //LandmarkService.getLandmarkById(landmarkId).then((response)=>{
+       // this.landmarks = response.data
+      
+      //const landmarkId = this.ItinerarysDetails.landmarkId
+     
+      const route = {
+        name: "view-map",
+        params: {
+          landmarkId: landmarkId
+        }
+     };
+      this.$router.push(route)
+
+
+    // })
+
+    }
     
   }
 };

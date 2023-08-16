@@ -1,6 +1,11 @@
 <template>
   <div>
-      Map
+
+      {{landmarks.map}}
+
+       <div class="landmark-map"> <iframe v-bind:src=landmarks.map alt=""/>  </div>
+
+      
 
   </div>
 </template>
@@ -18,7 +23,7 @@ export default {
         }
     },
     created(){
-        LandmarkService.getLandmarkById(this.landmarkId).then((response) =>{
+        LandmarkService.getLandmarkById(this.$route.params.landmarkId).then((response) =>{
 
             this.landmarks = response.data;
         })
