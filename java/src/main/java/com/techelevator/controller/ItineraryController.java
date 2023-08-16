@@ -65,8 +65,20 @@ public class ItineraryController {
     @DeleteMapping("/{itineraryId}")
     public void deleteItineraryById(@PathVariable int itineraryId){
         try{
-            //String username = principal.getName();
             itineraryDao.deleteItineraryById(itineraryId);
+
+        }catch (ResponseStatusException ex){
+            System.out.println("Something went wrong.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Itinerary failed.");
+        }
+
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{itineraryId}/landmark/{landmarkId}")
+    public void deleteLandMarkFromItinerary(@PathVariable int itineraryId, @PathVariable int landmarkId){
+        try{
+            itineraryDao.deleteLandMarkFromItinerary(itineraryId, landmarkId);
 
         }catch (ResponseStatusException ex){
             System.out.println("Something went wrong.");

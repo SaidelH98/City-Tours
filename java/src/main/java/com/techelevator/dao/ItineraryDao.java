@@ -23,6 +23,8 @@ public interface ItineraryDao {
 
     void deleteItineraryById(int itineraryId);
 
+    void deleteLandMarkFromItinerary(int itineraryId, int landmarkId);
+
 
 
 

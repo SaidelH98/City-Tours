@@ -151,6 +151,8 @@ public class JdbcLandmarkDao implements LandmarkDao{
         return venueTypeList;
     }
 
+
+
     private Landmark mapRowToLandmark(SqlRowSet rs) {
         Landmark landmark = new Landmark();
 

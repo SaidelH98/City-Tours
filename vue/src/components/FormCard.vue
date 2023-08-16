@@ -141,13 +141,14 @@ export default {
 .form-card{
     display: flex;
     align-items: center;
+    
 }
 
 input{
     display: block;
     height: 50px;
     width: 800px;
-    background-color: rgba(100, 98, 98, 0.07);
+    background-color: rgba(255, 255, 255, 0.07);
     border-radius: 3px;
     padding: 0 10px;
     margin-bottom: 8px;
@@ -157,6 +158,7 @@ input{
 
 form{
     align-content: center;
+    
 }
 
 label{
@@ -191,6 +193,7 @@ h2 {
 .form-body{
     display: flex;
     flex-direction: column;
+ 
 }
 
 

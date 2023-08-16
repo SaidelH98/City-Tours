@@ -28,7 +28,6 @@
           </tr>
         </thead>
         <tbody>
-         
             <tr  v-for="itinerary in itineraries" v-bind:key="itinerary.userId">
                 <td class="itineraryName"> {{itinerary.name}} </td>
                 <td class="itineraryStartingPoint"> {{itinerary.startingPoint}} </td>
@@ -37,26 +36,15 @@
                 <td class="add-Landmark">          
                   <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
                 </td> 
-                <td class="delete-itinerary">Delete</td>             
+                <td class="delete-itinerary"> <button type="submit" value="View" v-on:click="deleteItinerary(itinerary.itineraryId)">Delete</button></td>             
             </tr>
         </tbody>
       </table>
     
-
-
-    
-
     <main class="main">
-
-     
-    
 
     </main>
 
- 
-
-
-    
   </div>
 </template>
 
@@ -101,6 +89,22 @@ export default {
        // })
 
     },
+    deleteItinerary(itineraryId){
+      ItineraryService.deleteItineraryById(itineraryId).then((response)=>{
+
+                const userId = response.data.userId;
+                const route = {
+                    name: "profile",
+                    params: {
+                        
+                        userid: userId
+                    }
+                };
+                this.$router.push(route)
+
+      })
+
+    }
 
 }
 

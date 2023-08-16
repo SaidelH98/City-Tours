@@ -54,8 +54,13 @@ export default {
   addToExistingItinerary(itineraryId, landmarkId) {
     return axios.post(`itinerary/my-itinerary/${itineraryId}/${landmarkId}`)
   },
+
   getItineraryDetailsByItineraryId(itineraryId){
     return axios.get('itinerary-details/' + itineraryId)
+  },
+
+  deleteItineraryById(itineraryId){
+    return axios.delete('itinerary/' + itineraryId)
   }
 
 
