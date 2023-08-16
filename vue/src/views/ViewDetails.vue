@@ -168,9 +168,9 @@ export default {
   },
   methods: {
     deleteLandMarkFromItinerary(itineraryId, landmarkId){
-      ItineraryService.deleteLandMarkFromItinerary(itineraryId, landmarkId).then((response) =>{
+      ItineraryService.deleteLandMarkFromItinerary(itineraryId, landmarkId).then(() =>{
 
-              const userId = response.data.userId;
+       /*       const userId = response.data.userId;
                 const route = {
                     name: "profile",
                     params: {
@@ -178,7 +178,10 @@ export default {
                         userid: userId
                     }
                 };
-                this.$route.push(route)
+                this.$route.push(route)*/
+
+            const index = this. ItinerarysDetails.findIndex(i => i.itineraryId == itineraryId);
+            this.ItinerarysDetails.splice(index, 1)
 
       })
     },
