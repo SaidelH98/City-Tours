@@ -61,6 +61,20 @@ public class ItineraryController {
 
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{itineraryId}")
+    public void deleteItineraryById(@PathVariable int itineraryId){
+        try{
+            //String username = principal.getName();
+            itineraryDao.deleteItineraryById(itineraryId);
+
+        }catch (ResponseStatusException ex){
+            System.out.println("Something went wrong.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Itinerary failed.");
+        }
+
+    }
+
     @PutMapping("/{itineraryId}")
     public void updateItinerary(@Valid @PathVariable int itineraryId, @RequestBody Itinerary updatedItinerary){
 
@@ -78,4 +92,5 @@ public class ItineraryController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Itinerary failed.");
         }
     }
+
 }

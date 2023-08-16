@@ -96,6 +96,24 @@ public class JdbcItineraryDao implements ItineraryDao{
                 "WHERE itinerary_id = ?;";
         jdbcTemplate.update(sql, itineraryId);
     }
+    @Override
+    public void deleteItineraryById(int itineraryId){
+        String sql = "DELETE\n" +
+                "FROM itinerary_landmarks\n" +
+                "WHERE itinerary_id = ?;";
+        String sql2 = "DELETE\n" +
+                "FROM itinerary\n" +
+                "WHERE itinerary_id = ?;";
+
+        try{
+            jdbcTemplate.update(sql, itineraryId);
+            jdbcTemplate.update(sql2, itineraryId);
+
+        }catch(Exception ex){
+            System.out.println("Error deleting record");
+        }
+
+    }
 
     @Override
     public void updateItinerary(int itineraryId, Itinerary itinerary) {

@@ -21,6 +21,8 @@ public interface ItineraryDao {
 
     Itinerary createdItinerary(Itinerary itinerary, String username, int landmarkId);
 
+    void deleteItineraryById(int itineraryId);
+
 
 
 
