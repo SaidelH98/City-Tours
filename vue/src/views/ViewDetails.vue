@@ -39,6 +39,7 @@
                 <th>City</th>
                 <th>Country</th>
                 <th>Address</th>
+                <th>Go to Landmark</th>
                 <th>Add</th>
                 <th>Remove Landmark</th>
           </tr>
@@ -50,6 +51,9 @@
                 <td class="itinerary-city"> {{itinerary.cityName}} </td>
                 <td class="itinerary-country"> {{itinerary.country}} </td>
                 <td class="itinerary-address"> {{itinerary.address}} </td> 
+                <td class="landmark-map">
+                  <router-link v-bind:to="{ name: 'view-map', params:{landmarkId} }" > View Map</router-link>
+                  </td>
                 <td class="add-Landmark">          
                 <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
                 </td> 
@@ -123,7 +127,7 @@ import ItineraryService from '../services/ItineraryService';
 
 export default {
   name: "itinerary",
-  props:["userId", "itineraryId"
+  props:["userId", "itineraryId", "landmarkId"
   ],
   data(){
     return {
@@ -183,7 +187,8 @@ export default {
                 this.$router.push(route)
 
       })
-    }
+    },
+    
   }
 };
 </script>

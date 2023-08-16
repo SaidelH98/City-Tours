@@ -15,6 +15,7 @@ import Itinerary from "../views/Itinerary.vue"
 import ItineraryForm from "../views/ItineraryForm.vue"
 import ViewDetails from "../views/ViewDetails.vue"
 import RemoveLandmarks from "../views/RemoveLandmarks.vue"
+import ViewMap from "../views/ViewMap.vue"
 
 
 
@@ -149,6 +150,15 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: "/itinerary/map/:landmarkId",
+      name: "view-map",
+      component: ViewMap,
+      meta: {
+        requiresAuth: true
+      }
+
     }
   ]
 })

@@ -22,7 +22,7 @@ export default {
     return http.get('landmarks/venue/'+ venueType)
   },
 
-  getLandmarksById(landmarkId) {
+  getLandmarkById(landmarkId) {
     return http.get('landmarks/id/'+ landmarkId)
   },
 
