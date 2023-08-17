@@ -5,12 +5,12 @@
     <div class="profile">
         <img class="profile-picture" src="../assets/images/profile/charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" alt="">
         <div class="greeting">
-            Welcome {{$store.state.user.username}}!
+            Welcome <span class="username">{{$store.state.user.username}}! </span>
             
         </div>
     </div>
 
-       <h1>{{$store.state.user.username}}'s Itinerary Details</h1>
+       <h1 class="username">{{$store.state.user.username}}'s Itinerary Details</h1>
     </header>
 
     <div class="itinerary-details-header">
@@ -364,6 +364,10 @@ main{
 .update-button-button{
   height: 50px;
 
+}
+
+.username {
+  text-transform: capitalize;
 }
 
 

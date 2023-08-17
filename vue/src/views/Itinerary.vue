@@ -174,6 +174,10 @@ a:visited:hover{
   color: white;
 }
 
+.greeting{
+  text-transform: capitalize;
+}
+
 
 
 
