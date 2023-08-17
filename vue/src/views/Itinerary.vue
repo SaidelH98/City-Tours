@@ -164,6 +164,16 @@ export default {
   color: rgb(58, 58, 58)
 }
 
+button:hover{
+  background-color: black;;
+  color: white;
+  cursor: pointer;
+}
+
+a:visited:hover{
+  color: white;
+}
+
 
 
 
