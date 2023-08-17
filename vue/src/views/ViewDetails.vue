@@ -63,7 +63,7 @@
       <br><br><br><br>
 
   <div class="add-new-landmark">
-    <button><router-link v-bind:to="{ name: 'home' }" > Add New Landmark to Itinerary</router-link></button>
+    
 
   </div>
 
@@ -78,14 +78,15 @@
       <br>
       <br>
       <br>
-      <div>
-        <button type="submit" value="Edit Itinerary Information">Edit Itinerary Information</button>
-        
-      </div>
-       <div>
-
-        <div class="form-card">
-            <form v-on:submit.prevent="updateItinerary(itinerary)">
+      <div class="update-itinerary">
+            <div class="update-button">
+              <button class="update-button-button"><router-link v-bind:to="{ name: 'home' }" > Add New Landmark to Itinerary</router-link></button>
+              <br>
+              <button class="update-button-button" type="submit" value="Edit Itinerary Information" v-on:click="showForm = !showForm">Edit Itinerary Information</button>
+              
+          </div>
+          <div class="form-card" v-show="showForm">
+            <form v-on:submit.prevent="updateItinerary(itinerary)" >
                 <div>
                     <label>Itinerary Name:</label>
                     <input type="text" v-model="itinerary.name" required />
@@ -101,19 +102,23 @@
                 
                 <!--- <button type="submit" class="button">Save Itinerary</button> --->
                 
-                <div class="button" >
-                        <button type="submit" value="Update Itinerary">Update Itinerary</button>
+                <div class="update-button" >
+                        <button class="update-button-button" type="submit" value="Update Itinerary">Update Itinerary</button>
 
                 </div>
             </form>
-       </div>
-
       </div>
+    </div>
+      
 
      
     
 
     </main>
+
+    <footer>
+    
+    </footer>
       
 
  
@@ -142,6 +147,8 @@ export default {
       ],
 
       landmarks: [],
+
+      showForm : false,
 
 
 
@@ -312,9 +319,53 @@ h2 {
 }
 .form-body{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
  
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited{
+  color: rgb(58, 58, 58);
+}
+
+a:visited:hover{
+  color: white;
+}
+
+.update-itinerary{
+  display: inline-block;
+  justify-content: center;
+  
+}
+
+.update-button{
+  display: flex;
+  flex-direction: column;
+}
+
+button{
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: black;;
+  color: white;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px
+}
+
+.update-button-button{
+  height: 50px;
+
+}
+
 
 
 

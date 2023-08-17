@@ -34,7 +34,9 @@
                 <td class="itineraryDate"> {{itinerary.date}} </td> 
                 <td class="view-itinerary"><button type="submit" value="View" v-on:click="onClick(itinerary.itineraryId)">View</button></td> 
                 <td class="add-Landmark">          
-                  <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
+                  <button>
+                    <router-link v-bind:to="{ name: 'home' }" > Add</router-link>
+                  </button>
                 </td> 
                 <td class="delete-itinerary"> <button type="submit" value="Delete" v-on:click="deleteItinerary(itinerary.itineraryId)">Delete</button></td>             
             </tr>
@@ -153,6 +155,14 @@ export default {
     row-gap: 50px;
     background-color: white;
   }
+  a{
+    text-decoration: none;
+  }
+
+
+  a:visited {
+  color: rgb(58, 58, 58)
+}
 
 
 

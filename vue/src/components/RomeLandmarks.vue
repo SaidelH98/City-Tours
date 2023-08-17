@@ -25,13 +25,13 @@
                         <div class="rate">
                             
                             <div class="thumbs-up"  >
-                               <button v-on:click="onthumbsUp(landmark.landmarkId)">
+                               <button class="thumb-button" v-on:click="onthumbsUp(landmark.landmarkId)">
                                    <thumbs-up />
                                 </button> 
                                 <div class="rate-number">{{thumbsMap.get(landmark.landmarkId)}}</div>
                             </div>
                             <div class="thumbs-down">
-                                <button v-on:click="onthumbsDown(landmark.landmarkId)">
+                                <button class="thumb-button" v-on:click="onthumbsDown(landmark.landmarkId)">
                                 <thumbs-down />
                                 </button>
                                <div class="rate-number">{{thumbsDown.get(landmark.landmarkId)}}</div>
@@ -308,6 +308,13 @@ export default {
 
     .rate-number{
         text-align: center;
+    }
+
+    .thumb-button{
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    
     }
 
 
