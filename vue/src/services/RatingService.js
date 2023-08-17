@@ -1,12 +1,11 @@
 import axios from 'axios'
 
-const http = axios.create(
-    {baseURL: 'http://localhost:9000/'}
-)
+
 
 export default {
 
-    getThumbsUpByLandmarkId(landmarkId) {
-    return http.get('rating/thumbsUp/' + landmarkId)
+    async getThumbsUpByLandmarkId(landmarkId) {
+        const response = await axios.get('rating/thumbsUp/' + landmarkId)
+    return  response
   }
 }

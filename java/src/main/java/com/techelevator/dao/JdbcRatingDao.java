@@ -19,6 +19,7 @@ public class JdbcRatingDao implements RatingDao{
     }
 
 
+
     @Override
     public int getThumbsUpByLandmarkId(int landmarkId) {
         int thumbsUp = 0;

@@ -26,7 +26,7 @@
                             
                             <div class="thumbs-up">
                                 <thumbs-up />
-                                <div class="rate-number">{{thumbsUp}}</div>
+                                <div class="rate-number">{{thumbsMap.get(landmark.landmarkId)}}</div>
                             </div>
                             <div class="thumbs-down">
                                 <thumbs-down />
@@ -87,19 +87,31 @@ export default {
                 name: "",
                 startingPoint: "",
                 date: "",
-            }
+            },
+            thumbsMap: new Map()
         }
     },
 
-    created(){
+   async created(){
         const cityId = this.$route.params.cityId;
         LandmarkService.getLandmarksByCity(cityId).then((response) =>{
             this.landmarks = response.data;
 
+            
+            this.landmarks.forEach(async element => {
+                const count = await this.thumbUpNumbers(element.landmarkId)
+                this.thumbsMap.set(element.landmarkId, count)
+                this.$forceUpdate()
+           
+            });
+
         })
-        RatingService.getThumbsUpByLandmarkId(this.$store.params.landmarkId).then((response) =>{
-            this.thumbsUp = response.data;
+       /* RatingService.getThumbsUpByLandmarkId(this.landmarks.landmarkId).then((response) =>{
+            this.thumbsUp = this.thumbsUp + response.data;
+            console.log(response.data);
         })
+        */
+
 
     },
     computed: {
@@ -114,11 +126,15 @@ export default {
         }
     },
     methods: {
-       // onThumbsUp(userId, landmarkId){
+     async  thumbUpNumbers(landmarkId){
+         const response = await    RatingService.getThumbsUpByLandmarkId(landmarkId)
+         console.log(response);
+        return response.data
 
 
         }
     }
+}
 
 </script>
 
