@@ -187,7 +187,7 @@ export default {
                 };
                 this.$route.push(route)*/
 
-            const index = this. ItinerarysDetails.findIndex(i => i.itineraryId == itineraryId);
+            const index = this. ItinerarysDetails.findIndex(i => i.landmarkId == landmarkId);
             this.ItinerarysDetails.splice(index, 1)
 
       })
