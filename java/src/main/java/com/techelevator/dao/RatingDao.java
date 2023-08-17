@@ -14,4 +14,7 @@ public interface RatingDao {
 
     void thumbsDownLandmarkByUser(int landmarkId, int userId);
 
+    void updateRatingTrue(int userId, int landmarkId);
+
+    void updateRatingFalse(int userId, int landmarkId);
 }

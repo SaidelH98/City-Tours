@@ -38,4 +38,16 @@ public class RatingController {
     public void thumbsDownLandmarkByUser(@PathVariable int userId, @PathVariable int landmarkId) {
         ratingDao.thumbsDownLandmarkByUser(userId, landmarkId);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("updateTrue/{userId}/{landmarkId}")
+    public void updateRatingTrue(@PathVariable int userId, @PathVariable int landmarkId){
+        ratingDao.updateRatingTrue(userId, landmarkId);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("updateFalse/{userId}/{landmarkId}")
+    public void updateRatingFalse(@PathVariable int userId, @PathVariable int landmarkId){
+        ratingDao.updateRatingFalse(userId, landmarkId);
+    }
 }

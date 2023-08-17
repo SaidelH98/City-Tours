@@ -73,4 +73,32 @@ public class JdbcRatingDao implements RatingDao{
             System.out.println("Something went wrong.");
         }
     }
+
+    @Override
+    public void updateRatingTrue(int userId, int landmarkId){
+
+        String sql = "UPDATE rating\n" +
+                "set thumbs_up = true\n" +
+                "WHERE user_id = ? AND landmark_id = ?;";
+
+        try{
+            jdbcTemplate.update(sql, userId, landmarkId);
+        }catch(Exception ex){
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    @Override
+    public void updateRatingFalse(int userId, int landmarkId){
+
+        String sql = "UPDATE rating\n" +
+                "set thumbs_up = false\n" +
+                "WHERE user_id = ? AND landmark_id = ?;";
+
+        try{
+            jdbcTemplate.update(sql, userId, landmarkId);
+        }catch(Exception ex){
+            System.out.println("Something went wrong.");
+        }
+    }
 }
