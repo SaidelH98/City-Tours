@@ -10,14 +10,32 @@
          <h1>
           Landmarks In Rome
          </h1>
+ 
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
             <div class="landmark">
-                <div class="add-landmark" >
-                    <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
-                        <button class="button">Add to Itinerary</button>
-                    </router-link>
+
+                <div class="add-rate">
+                        <div class="add-landmark" >
+                            <router-link v-bind:to="{ name: 'itinerary-form', params: {landmarkId: landmark.landmarkId} }">
+                                <button class="button">Add to Itinerary</button>
+                            </router-link>
+                        </div>
+
+                        <div class="rate">
+                            
+                            <div class="thumbs-up">
+                                <thumbs-up />
+                                <div class="rate-number">10</div>
+                            </div>
+                            <div class="thumbs-down">
+                                <thumbs-down />
+                               <div class="rate-number">5</div>
+                            </div>
+                        </div>
+
                 </div>
+
                 <div class="landmarkName"> {{landmark.name}} </div>
                 <div class="landmarkVenue"> {{landmark.venueType}} </div>
                 <div class="landmarkImage"> <img v-bind:src=landmark.image alt="">  </div>
@@ -37,6 +55,8 @@
 <script>
 import LandmarkService from "../services/LandmarkService"
 import LandmarkSchedule from './LandmarkSchedule'
+import ThumbsDown from './ThumbsDown.vue'
+import ThumbsUp from './ThumbsUp.vue'
 
 
 export default {
@@ -45,7 +65,10 @@ export default {
         "landmarkId"
     ],
     components:{
-        LandmarkSchedule
+        LandmarkSchedule, 
+        ThumbsUp,
+        ThumbsDown
+
     },
     data() {
         return {
@@ -187,6 +210,25 @@ export default {
         background-image: url("../assets/images/Overview/dan-freeman-bvK3lFIWIIQ-unsplash.jpg");
         background-size: 650px;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    }
+    
+    .add-rate{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .rate{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 120px;
+        margin-right: 10px;
+    }
+
+    .rate-number{
+        text-align: center;
     }
 
 

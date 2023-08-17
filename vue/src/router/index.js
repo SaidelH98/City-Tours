@@ -14,7 +14,6 @@ import Munich from "../views/Munich.vue"
 import Itinerary from "../views/Itinerary.vue"
 import ItineraryForm from "../views/ItineraryForm.vue"
 import ViewDetails from "../views/ViewDetails.vue"
-import RemoveLandmarks from "../views/RemoveLandmarks.vue"
 import ViewMap from "../views/ViewMap.vue"
 
 
@@ -118,14 +117,6 @@ const router = new Router({
       }
     },
 
-    {
-      path: "/profile/remove-landmark",
-      name: "remove-landmarks",
-      component: RemoveLandmarks,
-      meta: {
-        requiresAuth: true
-      }
-    },
 
     {
       path: "/login",
