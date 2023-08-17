@@ -26,7 +26,7 @@
                             
                             <div class="thumbs-up">
                                 <thumbs-up />
-                                <div class="rate-number">10</div>
+                                <div class="rate-number">{{thumbsUp}}</div>
                             </div>
                             <div class="thumbs-down">
                                 <thumbs-down />
@@ -57,6 +57,7 @@ import LandmarkService from "../services/LandmarkService"
 import LandmarkSchedule from './LandmarkSchedule'
 import ThumbsDown from './ThumbsDown.vue'
 import ThumbsUp from './ThumbsUp.vue'
+import RatingService from "../services/RatingService"
 
 
 export default {
@@ -77,6 +78,10 @@ export default {
             schedules: [],
             search: "",
 
+            ratings: [],
+
+            thumbsUp: 0,
+
             itinerary: {
                 userId: this.$store.state.user.id,
                 name: "",
@@ -92,6 +97,10 @@ export default {
             this.landmarks = response.data;
 
         })
+        RatingService.getThumbsUpByLandmarkId(this.$store.params.landmarkId).then((response) =>{
+            this.thumbsUp = response.data;
+        })
+
     },
     computed: {
         filteredLandmarks:function () {
@@ -104,9 +113,13 @@ export default {
             })
         }
     },
+    methods: {
+       // onThumbsUp(userId, landmarkId){
 
 
-}
+        }
+    }
+
 </script>
 
 <style scoped>

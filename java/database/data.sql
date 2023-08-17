@@ -547,4 +547,8 @@ INSERT INTO itinerary_landmarks(itinerary_id, landmark_id, itinerary_order) VALU
 INSERT INTO itinerary_landmarks(itinerary_id, landmark_id, itinerary_order) VALUES (1, 2, 5);
 INSERT INTO itinerary_landmarks(itinerary_id, landmark_id, itinerary_order) VALUES (1, 9, 2);
 
+INSERT INTO rating (user_id, landmark_id, thumbs_up) VALUES (1, 1, true);
+INSERT INTO rating (user_id, landmark_id, thumbs_up) VALUES (1, 3, false);
+INSERT INTO rating (user_id, landmark_id, thumbs_up) VALUES (1, 2, true);
+
 COMMIT TRANSACTION;
