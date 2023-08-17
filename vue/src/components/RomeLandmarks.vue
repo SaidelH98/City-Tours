@@ -24,13 +24,17 @@
 
                         <div class="rate">
                             
-                            <div class="thumbs-up">
-                                <thumbs-up />
+                            <div class="thumbs-up"  >
+                               <button v-on:click="onthumbsUp(landmark.landmarkId)">
+                                   <thumbs-up />
+                                </button> 
                                 <div class="rate-number">{{thumbsMap.get(landmark.landmarkId)}}</div>
                             </div>
                             <div class="thumbs-down">
+                                <button v-on:click="onthumbsDown(landmark.landmarkId)">
                                 <thumbs-down />
-                               <div class="rate-number">5</div>
+                                </button>
+                               <div class="rate-number">{{thumbsDown.get(landmark.landmarkId)}}</div>
                             </div>
                         </div>
 
@@ -78,9 +82,15 @@ export default {
             schedules: [],
             search: "",
 
-            ratings: [],
+        
 
             thumbsUp: 0,
+
+            rating: {
+                userId: this.$store.state.user.id,
+                landmarkId: 0,
+                thumbsUp: "",     
+            },
 
             itinerary: {
                 userId: this.$store.state.user.id,
@@ -88,7 +98,8 @@ export default {
                 startingPoint: "",
                 date: "",
             },
-            thumbsMap: new Map()
+            thumbsMap: new Map(),
+            thumbsDown: new Map()
         }
     },
 
@@ -101,6 +112,13 @@ export default {
             this.landmarks.forEach(async element => {
                 const count = await this.thumbUpNumbers(element.landmarkId)
                 this.thumbsMap.set(element.landmarkId, count)
+                this.$forceUpdate()
+           
+            });
+
+            this.landmarks.forEach(async element => {
+                const count = await this.thumbDownNumbers(element.landmarkId)
+                this.thumbsDown.set(element.landmarkId, count)
                 this.$forceUpdate()
            
             });
@@ -132,7 +150,39 @@ export default {
         return response.data
 
 
-        }
+        },
+
+    async  thumbDownNumbers(landmarkId){
+        const response = await   RatingService.getThumbsDownByLandmarkId(landmarkId)
+        console.log(response);
+        return response.data
+    },
+
+
+    onthumbsUp(landmarkId){
+        RatingService.thumbsUpLandmarkByUser(this.$store.state.user.id, landmarkId).then((response) =>{
+            this.rating = response.data;
+            this.$forceUpdate()
+            window.location.reload(true)
+            
+        })
+
+    },
+
+        onthumbsDown(landmarkId){
+        RatingService.thumbsDownLandmarkByUser(this.$store.state.user.id, landmarkId).then((response) =>{
+            this.rating = response.data;
+            this.$forceUpdate()
+            window.location.reload(true)
+            
+        })
+
+    }
+
+
+
+
+
     }
 }
 
