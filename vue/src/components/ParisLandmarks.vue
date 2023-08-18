@@ -5,11 +5,13 @@
           <div class="search-block">
               <input class="search-bar" type="text" v-model="search" placeholder="Search Landmark" />
           </div>
-          <br>
-          <br>
+        
+          
          <h1>
           Landmarks In Paris
          </h1>
+         
+         
  
 
         <div v-for="landmark in filteredLandmarks" v-bind:key="landmark.landmarkId">
@@ -286,10 +288,13 @@ export default {
         display: flex;
         height: 200px;
         width: 1300px;
-        background-image: url("../assets/images/Overview/dan-freeman-bvK3lFIWIIQ-unsplash.jpg");
-        background-size: 650px;
+        background-image: url("../assets/images/Overview/background_photo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
     }
+    
     
     .add-rate{
         display: flex;
