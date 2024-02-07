@@ -1,5 +1,5 @@
 # City Tours
 ​
-This directory contains all of the starter projects for the final capstone.
-​
-Each project contains instructions that provides information about the starting code and explains how to get started with the final capstone project.
+A web app using Vue and a PostgreSQL database that allows users to plan and construct an itinerary of a tour of famous European cities like Barcelona or Brussels. 
+Logged in users can create itineraries by constructing a list of landmarks in their chosen city that they are interested in visiting. 
+Users can create multiple itineraries which can then be saved, edited or deleted.
